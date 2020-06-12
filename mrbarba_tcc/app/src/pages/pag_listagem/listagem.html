@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="../../js/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">  
+    <script src="../../js/scripts.js"></script>
+    
+    <title>Agendamentos Clientes</title>
+</head>
+<body id="listagem">
+   
+    <table>
+        <h3>Horários Agendados</h3> 
+        <tr>
+          <th>Nome</th>
+          <th>Horário</th>
+          <th>Tipo de Serviço</th>
+          <th>Valor</th>
+          <th>Confirmar</th>
+          <th>Deletar</th>
+        </tr>
+        <tr>
+          <td>Jill</td>
+          <td>10:20 17/04/2020</td>
+          <td>barba e cabelo</td>
+          <td>$50,00</td>
+          <td>
+            <a href="">
+                <img src="https://image.flaticon.com/icons/svg/257/257198.svg" alt="Confirmação">
+            </a>
+          </td>
+          
+          <td>
+            <a href="">
+                <img src="https://image.flaticon.com/icons/svg/395/395848.svg" alt="Confirmação">
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jill</td>
+          <td>10:20 17/04/2020</td>
+          <td>barba e cabelo</td>
+          <td>$50,00</td>
+          <td>
+            <a href="">
+                <img src="https://image.flaticon.com/icons/svg/257/257198.svg" alt="Confirmação">
+            </a>
+          </td>
+          
+          <td>
+            <a href="">
+                <img src="https://image.flaticon.com/icons/svg/395/395848.svg" alt="Confirmação">
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jill</td>
+          <td>10:20 17/04/2020</td>
+          <td>barba e cabelo</td>
+          <td>$50,00</td>
+          <td>
+            <a href="">
+                <img src="https://image.flaticon.com/icons/svg/257/257198.svg" alt="Confirmação">
+            </a>
+          </td>
+          
+          <td>
+            <a href="">
+                <img src="https://image.flaticon.com/icons/svg/395/395848.svg" alt="Confirmação">
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jill</td>
+          <td>10:20 17/04/2020</td>
+          <td>barba e cabelo</td>
+          <td>$50,00</td>
+          <td>
+            <a href="">
+                <img src="https://image.flaticon.com/icons/svg/257/257198.svg" alt="Confirmação">
+            </a>
+          </td>
+          
+          <td>
+            <a href="">
+                <img src="https://image.flaticon.com/icons/svg/395/395848.svg" alt="Confirmação">
+            </a>
+          </td>
+        </tr>
+    </table>
+
+
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".barbeiro">Cadastrar Barbeiro</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".servico">Cadastrar Serviço</button>
+
+    <div class="modal fade barbeiro" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <section>
+            <form action="#">
+              <div>
+                <h3>Cadastrar barbeiro</h3>
+                
+                <div class="cad">
+                  <label for="txtnomebarbeiro">Nome:</label>
+                  <input type="text" name="txtnomebarbeiro" placeholder="Digite o nome do barbeiro">
+
+                  <button>Salvar</button>
+                  <button>Voltar</button>
+                </div>
+                
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade servico" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <section>
+            <form action="#">
+              <div>
+                <h3>Cadastrar Serviço</h3>
+                
+                <div class="cad">
+                  <label for="txtservico">Serviço:</label>
+                  <input type="text" name="txtservico" placeholder="Digite o Serviço">
+
+                  <button>Salvar</button>
+                  <button>Voltar</button>
+                </div>
+                
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     
+</body>
+</html>

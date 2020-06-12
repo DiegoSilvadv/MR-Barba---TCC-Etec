@@ -1,0 +1,60 @@
+#listagem {
+    background-color: #d9d9d9;
+}
+
+#listagem button {
+    width: 20%;
+    background: #303b39;
+    border-color: #303b39;
+    margin-left: 20%;
+}
+
+table {
+    font-style: 'Roboto' sans-serif;
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+h3 {
+    padding: 2%;
+    color: #303b39;
+    text-shadow: 1px 1px rgba(27, 27, 27,0.4);
+    text-align: center;
+}
+
+ th, td {
+    padding: 10px;
+    color: #303b39;
+    text-align: left;
+    border: 1px solid;
+}
+
+td img {
+    height: 40px;
+    width: 40px;
+}
+
+.btn {
+    margin-top: 2%;
+}
+
+.cadbarbeiro {
+    width: 100%;
+}
+
+.cad button {
+    margin-top: 2%;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid #303b39;
+    background-color: #303b39;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+section form {
+    padding: 5%;
+}
+
