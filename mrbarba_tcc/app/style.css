@@ -1,0 +1,395 @@
+/* #303b48  azul*/
+/* #a9b0b8 cinza escuro */
+/* #d9d9d9 cinza claro */
+/* #b39b78 marron */
+/* #101317 preto */
+/* #5d5c69 cinza mais escuro */
+/* font-family: 'Roboto Slab', serif; */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', sans-serif;
+    background-color: #d9d9d9;
+}
+
+#background-yellow {
+    display: block;
+    margin-top: 0;
+    width: 100%;
+    height: 400px;
+    background-image: radial-gradient(#DF8F05,rgba(223, 143, 5, 0.899), #DF8F05 );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+nav {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav .collapse ul{
+    margin-left: auto;
+    color: #303b48;
+}
+
+nav .collapse ul li button {
+    height: 40px;
+
+    border: 1px solid #303b48;
+    border-radius: 8px;
+    background: #303b48;
+    color: #fff;
+
+    box-shadow: 2px 2px 2px  rgba(22, 21, 21, 0.4);
+
+    cursor: pointer;
+}
+
+nav .collapse ul li button:hover {
+    background: #303b58;
+}
+
+main {
+    margin-top: 5%;
+    width: 80%;
+    margin: 0 auto
+}
+
+#background-yellow main p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+h3 {
+    text-align: center;   
+}
+
+.servico p{
+    text-align: center;
+}
+
+.servicos {
+    margin-top: 5%;
+    display: flex;
+}
+
+.servico {
+    margin: 0 auto;
+}
+.servico img {
+    /* alinhamento de imagem ao centro */
+    display: block;
+    position: relative;
+    margin: 0 auto;
+
+    height: 60px;
+    width: 60px;
+}
+
+#background-blocks-black {
+    padding: 10%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 80px;
+    background-image: url(https://image.freepik.com/free-photo/3d-render-spotlights-grunge-brick-wall_1048-6284.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section .descricao-d {
+    margin-left: auto;
+    width: 80%;
+    background-color: #DF8F05;
+    padding-bottom: 10px;
+    border-radius: 10px;
+
+    box-shadow: 2px 3px 3px rgba(22, 21, 21, 0.4);
+}
+
+section .descricao {
+    margin-right: auto;
+    width: 80%;
+    background-color: #DF8F05;
+    border-radius: 10px;
+    padding-bottom: 10px;
+
+    box-shadow: 2px 3px 3px rgba(22, 21, 21, 0.4);
+}
+
+section h4 {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+section p {
+    text-align: start;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 12px;
+}
+
+#background-blocks-black  img {
+    height: 100px;
+    width: 100px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+
+    padding: 5% ;
+}
+
+
+
+
+
+/* form */
+#modal {
+    background-image: radial-gradient(#DF8F05,rgba(223, 143, 5, 0.899), #DF8F05 );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#modal h3 {
+    text-align: center;
+    font-size: 24px;
+    padding-top: 3%;
+
+    font-weight: bold;
+    color: rgba(22, 21, 21, 0.9);
+}
+.container-modal {
+    display: flex;
+    width: 100%;
+    
+}
+#image-form {
+    width: 100%;
+
+    background-image: url(https://image.freepik.com/free-photo/side-view-man-getting-new-hairstyle_23-2148242799.jpg);
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: auto;
+    margin:2% 3%;
+}
+
+#form-agendamento {
+    width: 50%;
+    margin: 2% 10% 2% 0;
+    text-align: center;
+    
+}
+
+#form-agendamento div label {
+    display: block;
+    color: #171b20;
+    letter-spacing: 0.4;
+    font-weight: bold;
+    padding: 1%;
+}
+
+#form-agendamento div input, select {
+    
+    border-radius: 10px;
+    border: 1px solid;
+
+    background-color: transparent;
+    color:black;
+    width: 100%;
+    padding: 2px;
+}
+
+#form-agendamento button {
+    
+    display: inline-block;
+    margin: 10px 0;
+    height: 35px;
+    width: 120px;
+    
+    border: 1px solid #303b58;
+    border-radius: 10px;
+
+    background-color: #303b58;
+    color: #fff;
+    font-weight: bold;
+
+    box-shadow: 1px 1px rgba(20, 27, 27, 0.4);
+    cursor: pointer;
+}
+
+#form-agendamento button:hover{
+    background-color: #171b20;
+    transition: 10ms;
+}
+
+
+
+/* inicio do footer */
+
+#container-footer {
+    width: 100%;
+    height: auto;
+    background-image: url(https://image.freepik.com/free-photo/3d-render-spotlights-grunge-brick-wall_1048-6284.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#container-footer h4 {
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container-footer h4 {
+    margin-top: 20px;
+}
+#container-footer .footer img{
+    width: 50px;
+    height: 50px;
+    display:  inline-block;
+    margin: 5% 10%;
+}
+#container-footer #copyrigth {
+    width: 80%;
+    margin: 20px auto;
+    padding: 1%;
+    border-top: 1px solid white;
+    text-align: center;
+    color: #d9d9d9;
+}
+#container-footer .footer p {
+    color: white;
+    font-weight: bold;
+}
+.informacoes {
+    width: 100%;
+}
+
+.contato-img {
+    width: 15%;
+    display: inline-block;
+}
+
+.contato-img img {
+    margin-top: 15%;
+    width: 50px;
+    height: 50px;
+}
+
+
+.contato-img p {
+    text-align: left;
+    padding: 2%;
+    font-size: 14px;
+    color: white;
+   
+}
+
+.contato-img-maps #maps {
+    width: 600px;
+    height: 300px;
+}
+
+
+footer {
+    width: 100%;
+    color: #5d5c69;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    border-top: 1px solid #5d5c69;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    main .servicos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    main h3 {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    main p {
+        font-size: 12px;
+    }
+
+    main img {
+        height: 60px;
+        width: 60px;
+    }
+
+    #background-blocks-black {
+        display: block;
+    }
+
+
+    section .descricao-d{
+        width: 100%;
+        margin-left: 0;
+        margin:0 auto;
+    }
+
+    section .descricao {
+        width: 100%;
+        margin-right: 0;
+        margin: 40px auto;
+    }
+
+    section img {
+        height: 70px;
+        width: 70px;
+    }
+    
+    section h4 {
+        font-size: 18px;
+    }
+
+    section p {
+        font-size: 12px;
+    }
+
+    h5 {
+        font-weight: bold;
+        display: none;
+    }
+
+    .contato-img-maps #maps {
+        display: none;
+    }
+
+    .contato-img {
+        width: 100%;
+        display: block;
+    }
+    .contato-img p {
+        text-align: center;
+    }
+    #container-footer .footer img {
+        display: block;
+        margin: 20% auto;       
+    }
+
+    #image-form {
+        display: none;
+    }
+
+    #form-agendamento {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+
+
+}
+
+
