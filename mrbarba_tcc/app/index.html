@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="../../js/jquery-3.4.1.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">  
 
-    <script src="../../js/scripts.js"></script>
-    <link rel="stylesheet" href="style.css">     
-
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <!--============================================================================================================-->
+    <script type="text/javascript" src="./js/jquery.mask.min.js"></script>
+    <!--============================================================================================================-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!--============================================================================================================-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">
+    <!--============================================================================================================-->
+    <link rel="stylesheet" href="./style.css"> 
+    <!--============================================================================================================-->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--============================================================================================================-->
+    <script src="./js/scripts.js"></script>
     <title>Mr Barba</title>
 </head>
 
+
 <body>
     <!-- seção da navbar e dos serviços oferecidos -->
-    <section id="background-yellow">
+<section id="background-yellow">
         <nav class="navbar navbar-expand-lg navbar-light ">
             <a class="navbar-brand" href="index.html">
                 <img src="assents/logo.png" alt="logo do site" width="90" height="90" class="d-inline-block align-to-center"> <h5>Mr Barba</h5>
@@ -111,16 +120,18 @@
         <form action="http://127.0.0.1:5500/app/src/pages/index.html"  id="form-agendamento">
             <div>
                 <label for="txtnome">Nome</label>
-                <input type="text" name="txtnome" placeholder="Digite seu nome">
+                <input type="text" name="txtnome" id="txtnome" maxlength="100" placeholder="Digite seu nome" 
+                    required="required" onchange="verificar()"
+                >
            
                 <label for="txtdata">Horário</label>
-                <input type="datetime-local" name="txtdata">
+                <input type="datetime-local" name="txtdata" id="txtdata" required="required" >
 
                 <label for="txttelefone">Telefone</label>
-                <input type="tel" name="txttelefone" id="txttelefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" />
+                <input type="tel" name="txttelefone" id="txttelefone" maxlength="16" required="required"/>
 
                 <label>Tipo de Serviço</label>
-                    <select id="serviço">
+                    <select id="serviço" required="required">
                         <option value="selecione">Escolha o tipo de serviço</option> 
                         <option value="barba">Barba</option>
                         <option value="cabelo">Cabelo</option>
@@ -129,7 +140,7 @@
                     </select>
 
                 <label for="barbeiro">Barbeiro</label>
-                <select id="barbeiro">
+                <select id="barbeiro" required="required">
                     <option value="selecione">Selecione o barbeiro</option> 
                     <option value="joao">João</option>
                     <option value="marcos">Marcos</option>
@@ -137,9 +148,11 @@
                 </select>
             </div>
 
-            <button>Agendar</button>     
+            <button id="btnsalvar" >Agendar</button>     
         </form> 
     </div>
+
+   
     
 </section>
 <!-- fim do agendamento  -->
@@ -186,12 +199,6 @@
    
 </footer>
 
-
-
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+   
 </body>
 </html>
