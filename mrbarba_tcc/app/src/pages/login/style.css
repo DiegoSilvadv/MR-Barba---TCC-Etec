@@ -1,0 +1,148 @@
+body{
+    background: #DF8F05;
+    color: #25282b;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+.button {
+    color: white;
+    background: #ff5e84;
+
+    width: 150px;
+    height: 40px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+    /* rgb Alpha */
+    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
+}
+.button:hover {
+    background-color: #0984e3;
+    text-decoration: none;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+button {
+    border: none;
+    font-weight: bold;
+    background: none;
+
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    text-decoration: underline;
+}
+
+/* modal */
+#modal {
+    /* posicionamento do modal no centro */
+   
+    background: #DF8F05;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    
+    display: flex;
+    justify-content: center;
+
+    transition: 400ms;
+}
+
+::-webkit-input-placeholder {
+    color: #DF8F05;
+ }
+
+#modal .content {
+    margin-top: 10%;
+    background-color: #25282b;
+    color: white;
+    height: 350px;
+    border-radius: 10px;
+}
+
+#modal .content h3{
+    margin-top: 10%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#modal form {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto 15%;
+    display: block;
+}
+
+
+
+form input {
+    width: 100%;
+    box-sizing: border-box;
+    background: #25282b;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #DF8F05;
+    outline: none;
+    color: #DF8F05;
+    font-size: 20px;
+}
+
+form label {
+    color: #DF8F05;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.8px;
+}
+
+
+form button {
+    background: #DF8F05;
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    margin-right: auto;
+    border-radius: 6px ;
+    cursor: pointer;
+
+    margin-top: 32px;
+    transition: 400ms;
+}
+
+form button:hover{
+    background-color: #f79d02;
+    color: white;
+    text-decoration: none;
+}
+
+

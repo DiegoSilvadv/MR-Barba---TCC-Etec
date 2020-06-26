@@ -1,15 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--===============================================================================================-->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="../../../js/jquery-3.4.1.min.js"></script>
+    <!--============================================================================================================-->
+    <script type="text/javascript" src="../../../js/jquery.mask.min.js"></script>
+    <!--============================================================================================================-->
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <!--============================================================================================================-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">
+    <!--============================================================================================================-->
+    <link rel="stylesheet" href="./style.css"> 
+    <!--============================================================================================================-->
+    <script src="../../../js/bootstrap.min.js"></script>
+    <!--============================================================================================================-->
+    <script src="../../../js/scripts.js"></script>
     
-
-
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
+    
+ <div id="modal" >
+    <div class="content">
+        <h3>Login</h3>
+        <!-- váidando no frontend onsubmit -->
+        <form action="/" method="POST" onsubmit="">
+            <div class="inputwrapper">
+                <label for="login">Email</label>
+                <input type="text" name="login" placeholder="Email">
+            </div>
+
+            <div class="input-wrapper">
+                <label for="senha">Senha</label>
+                <input type="text" name="senha" placeholder="Senha">
+            </div>
+            <button>Salvar</button>
+            <a href="#">Registrar-se</a>   
+        </form>
+    </div>
+</div>
+
+   
     
 </body>
 </html>

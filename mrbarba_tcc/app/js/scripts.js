@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    alert("Ola mundo");
+    
     $("#txttelefone").mask("(99) 9 9999-9999")
   
     function ApenasLetras(e, t) {
