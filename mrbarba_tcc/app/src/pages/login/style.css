@@ -22,7 +22,7 @@ a:hover {
     width: 150px;
     height: 40px;
 
-    font-size: 14px;
+    font-size: 24px;
     font-weight: bold;
 
     display: flex;
@@ -65,7 +65,6 @@ button:hover {
 /* modal */
 #modal {
     /* posicionamento do modal no centro */
-   
     background: #DF8F05;
     position: relative;
     top: 0;
@@ -87,14 +86,19 @@ button:hover {
     margin-top: 10%;
     background-color: #25282b;
     color: white;
-    height: 350px;
+    height: 400px;
     border-radius: 10px;
+
+    box-shadow: 3px 3px  rgba(44, 44, 44, 0.3);
 }
 
-#modal .content h3{
-    margin-top: 10%;
-    text-align: center;
-    text-transform: uppercase;
+#modal .content img{
+    width: 90px;
+    height: 90px;
+    /* centralização de imagem */
+    display: block;
+    position: relative;
+    margin: 10px auto;
 }
 
 #modal form {
@@ -103,8 +107,6 @@ button:hover {
     margin: 0 auto 15%;
     display: block;
 }
-
-
 
 form input {
     width: 100%;
@@ -143,6 +145,52 @@ form button:hover{
     background-color: #f79d02;
     color: white;
     text-decoration: none;
+}
+@media screen and (max-width: 1025px) {
+    #modal .content {
+      width: 80%;
+      height: 450px;
+    }
+    form button{
+        display: block;
+        margin: 5% auto;
+    }
+
+    form a {
+        display: flex;
+        justify-content: center;   
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    #modal {
+       margin-top: 30%;      
+    }
+}
+
+@media screen and (max-width: 350px) {
+    
+    #modal .content {
+        width: 80%;
+        height: 400px;
+    }
+    form button{
+        display: block;
+        margin: 5% auto;
+    }
+
+    form a {
+        display: flex;
+        justify-content: center;      
+    }
+
+    #modal form {
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto 15%;
+        display: block;
+    }
 }
 
 
