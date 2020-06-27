@@ -1,14 +1,9 @@
 #listagem {
     background-color: #d9d9d9;
 }
-
-#listagem button {
-    width: 20%;
-    background: #303b39;
-    border-color: #303b39;
-    margin-left: 20%;
+.content {
+    width: 100%;
 }
-
 table {
     font-style: 'Roboto' sans-serif;
     width: 90%;
@@ -35,26 +30,60 @@ td img {
     width: 40px;
 }
 
-.btn {
-    margin-top: 2%;
-}
-
-.cadbarbeiro {
+#modal {
     width: 100%;
+    font-family: 'roboto', sans-serif;
+    font-weight: 600;
+
+    display: block;
 }
 
-.cad button {
-    margin-top: 2%;
-    height: 30px;
-    border-radius: 8px;
-    border: 1px solid #303b39;
-    background-color: #303b39;
-    color: #fff;
-    cursor: pointer;
+#modal .container-modal {
+    width: 70%;
+    margin: 10% auto;
+    background-color: #303b48;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    
+}
+.info {
+    width: 100%;
+    margin: 0 auto;
+}
+.container-modal h3 {
+    color: #d9d9d9;
+}
+.info label{
+    color: #d9d9d9;
+    padding: 10px;
+    text-align: center;
+}
+
+.info input {
+    margin: 0 auto;
+}
+
+.info label, input {
+    display: block;
+    width:200px;
+    margin:0 auto;
+}
+
+.info button {
+    display: block;
+    margin: 10px auto;
+    background-color: #DF8F05;
+    border-radius: 10px;
+
+    border-style: solid;
+    border-color: #DF8F05;
+
+    color: #303b48;
+    font-weight: 600;
+
+    box-shadow: 1px 2px rgba(27, 27, 27,0.4);
 }
 
 
-section form {
-    padding: 5%;
-}
+
 
