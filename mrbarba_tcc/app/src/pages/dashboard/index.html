@@ -4,16 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="../../../js/jquery-3.4.1.min.js"></script>
+    <!--============================================================================================================-->
+    <script type="text/javascript" src="../../../js/jquery.mask.min.js"></script>
     <!--===============================================================================================-->
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <!--===============================================================================================-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">  
-    
+    <!--===============================================================================================-->
+    <script src="../../../js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../../js/scripts.js"></script>
     
     <title>Agendamentos Clientes</title>
 </head>
 <body id="listagem">
-  <section class="content">
+
+  <nav class="navbar navbar-expand-lg  bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assents/logo-laranja.png" alt="">
+    </a>
+    <div class="">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#" id="agendas">Agendas</a>
+        <a class="nav-item nav-link active" href="#" id="cad-barbeiro">Cadastrar Barbeiro</a>
+        <a class="nav-item nav-link active" href="#" id="cad-servico">Cadastrar serviço</a>     
+      </div>
+    </div>
+  </nav>
+
+  <section id="content">
     <table>
       <h3>Dashboard MR Barba</h3> 
       <tr>
@@ -46,7 +68,7 @@
   </section>
   <!--===========================================================================================================-->
   <section id="modal">
-    <div class="container-modal">
+    <div class="container-modal" id="modal-1">
       <h3>Cadastrar Serviço</h3>
         <form action="#" id="form-add-barbeiro">
           <div class="info">
@@ -62,7 +84,7 @@
         
     </div>
     
-    <div class="container-modal">
+    <div class="container-modal" id="modal-2">
       <h3>Cadastrar Barbeiro</h3>
         <form action="#" id="form-add-barbeiro">
           <div class="info">
@@ -76,6 +98,39 @@
         </form> 
     </div>  
   </section>
+
+  <section class="listagem-barbeiro" id="barbeiro">
+    <div>
+      <ul>
+        <h3>listagem de Barbeiros</h3>    
+        <li>joao
+          <a href="#">
+            <img src="https://image.flaticon.com/icons/svg/395/395848.svg" alt="Confirmação">
+          </a>
+          <a href="#">
+            <img src="https://image.flaticon.com/icons/svg/257/257198.svg" alt="Confirmação">
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </section>
+
+  <section class="listagem-servicos" id="servico">
+    <ul>
+      <h3>listagem de serviços</h3>
+      <li>dito
+        <a href="#">
+          <img src="https://image.flaticon.com/icons/svg/395/395848.svg" alt="Confirmação">
+        </a>
+        <a href="#">
+          <img src="https://image.flaticon.com/icons/svg/257/257198.svg" alt="Confirmação">
+        </a>
+      </li>
+    </ul>
+  </section>
+    
       
 
 

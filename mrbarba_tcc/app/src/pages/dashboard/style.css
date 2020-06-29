@@ -1,7 +1,7 @@
 #listagem {
     background-color: #d9d9d9;
 }
-.content {
+#content {
     width: 100%;
 }
 table {
@@ -75,6 +75,9 @@ td img {
     background-color: #DF8F05;
     border-radius: 10px;
 
+    width: 120px;
+    height: 45px;
+
     border-style: solid;
     border-color: #DF8F05;
 
@@ -84,6 +87,38 @@ td img {
     box-shadow: 1px 2px rgba(27, 27, 27,0.4);
 }
 
+.navbar-nav a {
+    color: #ffffff;
+}
 
+.navbar-nav a:hover {
+    color: #DF8F05;
+    transition: 500ms;
+}
+
+.navbar-brand img {
+    height: 100px;
+    width: 100px;
+}
+
+
+/* listagem de serviços */
+.listagem-servicos img{
+    height: 30px;
+    margin-left: 1%;
+    width: 30px;
+}
+.listagem-servicos li{
+    list-style-type: none;
+}
+
+.listagem-barbeiro li {
+    list-style-type: none;
+}
+.listagem-barbeiro img {
+    height: 30px;
+    margin-left: 1%;
+    width: 30px;
+}
 
 
