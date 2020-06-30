@@ -17,7 +17,9 @@
     <!--============================================================================================================-->
     <script src="../../../js/bootstrap.min.js"></script>
     <!--============================================================================================================-->
-    <script src="../../../js/scripts.js"></script>
+    <script src="../../../js/login.js"></script>
+
+   
     
     <title>Login</title>
 </head>
@@ -28,17 +30,21 @@
         <img src="../../../assents/logo-laranja.png" alt="Logo-MR-barba">
         <!-- váidando no frontend onsubmit -->
         <form action="/" method="POST" onsubmit="">
-            <div class="inputwrapper">
+            <div class="inputs">
                 <label for="login">Email</label>
                 <input type="text" name="login" placeholder="Email">
             </div>
 
-            <div class="input-wrapper">
+            <div class="inputs">
                 <label for="senha">Senha</label>
                 <input type="password" name="senha" placeholder="Senha">
             </div>
-            <button>Login</button>
-            <a href="#">Registrar-se</a>   
+            <div class="inputs" id="repetir-senha">
+                <label for="senha">Repetir senha</label>
+                <input type="password" name="senha" placeholder="Repetir senha">
+            </div>
+            <button id="btn-registrar">Login</button>
+            <a href="#" id="registrar-login">Registrar-se</a>   
         </form>
     </div>
 </div>

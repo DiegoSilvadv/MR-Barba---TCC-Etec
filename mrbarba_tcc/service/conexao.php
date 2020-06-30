@@ -6,7 +6,6 @@
         const user = 'root';
         const password = '';
         const charset = 'utf8mb4';
-
         public static $instance;
         // iniciando a conexão com banco de dados se a $instance não existir é criado a conexão
         public static function getInstance() {
@@ -20,7 +19,7 @@
                         "", self::user, self::password
                     );
                 } catch(PDOException $error) {
-                    die("<h1>Erro ao conectar com banco de dados contate o suporte</h1>")
+                    die("<h1>Erro ao conectar com banco de dados contate o suporte</h1>");
                 }
                 return self::$instance;
             }
