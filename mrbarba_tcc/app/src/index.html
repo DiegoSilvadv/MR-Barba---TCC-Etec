@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!--============================================================================================================-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">
+    <!--============================================================================================================-->
+    <link rel="stylesheet" href="./style.css"> 
+    <!--===============================================================================================-->
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <!--============================================================================================================-->
+    <script type="text/javascript" src="../js/jquery.mask.min.js"></script>
+    <!--============================================================================================================-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!--============================================================================================================-->
+    <script src="../js/login.js"></script>
+    <!--============================================================================================================-->
+    <script src="../js/rotas.js"></script>
+
+   
+    
+    <title>Login</title>
+</head>
+<body>
+    
+<div id="modal" >
+    <div class="content">
+        <img src="../assents/logo-laranja.png" alt="Logo-MR-barba">
+        <!-- váidando no frontend onsubmit -->
+        <form id="form-login">
+            <div class="inputs">
+                <label for="login">Email</label>
+                <input type="text" name="email" id="nome" placeholder="Email">
+            </div>
+
+            <div class="inputs">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" placeholder="Senha">
+            </div>
+            <div class="inputs" id="repetir-senha">
+                <label for="senha">Repetir senha</label>
+                <input type="password" name="repetir-senha" id="repetir-senha" placeholder="Repetir senha">
+            </div>
+                <button type="submit" id="btn-login">Login</button>
+                <button type="submit" id="btn-registrar">Registrar-se</button>
+                <a href="#" id="registrar-login">Registrar-se</a>   
+        </form>
+    </div>
+</div>
+
+   
+    
+</body>
+</html>

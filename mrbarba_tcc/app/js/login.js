@@ -3,22 +3,30 @@
 
 $(document).ready(function(){
     $("#repetir-senha").hide(); 
+    $("#btn-registrar").hide();
+
     
     $("#registrar-login").click(function(){
         $("#repetir-senha").show(1000); 
         $("#registrar-login").hide(1000);
-        $("#btn-registrar").html("Registrar-se", 1000);
+        $("#btn-registrar").show();
+        $("#btn-login").hide();
+    });
 
+    
 
+    $("#form-login").submit(function(e){
+        e.preventDefault();
         let email = $("#email").val();  
-        let password = $("#password").val();  
-        $.post( url, { "type": "login", "email": email, "password": password})
+        let senha = $("#senha").val();  
+        let repetir_senha = $("#repetir-senha").val();
+
+        // .done executa direto diferente do succes que so executa se der sucesso o return
+        $.post( rota, {"tipo": "login-registro", "email": email, "senha": senha, "repetir_senha": repetir_senha})
             .done(function(retorno) 
             {            
-                let json = $.parseJSON(retorno);           
-                if(json.status == 1)
-                    window.location = "home.html";
-                else
-                    alert(json.error);
-            });
+                alert(retorno);
+            }) 
+         
+    });   
 });
