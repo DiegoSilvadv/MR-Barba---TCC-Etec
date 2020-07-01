@@ -65,8 +65,9 @@ button:hover {
 /* modal */
 #modal {
     /* posicionamento do modal no centro */
+    width: 100%;
     background: #DF8F05;
-    position: relative;
+    position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
@@ -84,23 +85,37 @@ button:hover {
 
 #modal .content {
     width: 30%;
-    margin-top: 7%;
     background-color: #25282b;
     color: white;
-    height: 400px;
+    height: auto;
     border-radius: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+   
+    
 
     box-shadow: 3px 3px  rgba(44, 44, 44, 0.3);
 }
 
-#modal .content img{
-    width: 80px;
-    height: 80px;
+#modal .content img {
+    width: 70px;
+    height: 70px;
     /* centralização de imagem */
     display: block;
     position: relative;
-    margin: 5px auto;
+    margin:5px auto;
 }
+#modal .content h5 {
+    text-align: center;
+    margin: 15px auto;
+    color: rgb(219, 219, 219);
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+} 
+
 
 
 
@@ -109,6 +124,8 @@ button:hover {
     max-width: 900px;
     margin: 0 auto 15%;
     display: block;
+    position: relative;
+    
 }
 
 form input {
@@ -155,44 +172,34 @@ form button:hover{
 
 form a {
     display: flex;
-    justify-content: center;   
+    justify-content: center; 
 }
+
+form a:hover {
+    color: #f79d02;
+    transition: 500ms;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 1025px) {
     #modal .content {
-      width: 80%;
-      height: 450px;
+      width: 90%;
+      height: auto;
     }
     
-}
-
-
-@media screen and (max-width: 500px) {
-    #modal {
-       margin-top: 30%;      
-    }
 }
 
 @media screen and (max-width: 350px) {
     
-    #modal .content {
-        width: 80%;
-        height: 400px;
-    }
     form button{
         display: block;
         margin: 5% auto;
     }
 
-    form a {
-        display: flex;
-        justify-content: center;      
-    }
-
     #modal form {
-        width: 80%;
-        max-width: 800px;
-        margin: 0 auto 15%;
-        display: block;
+        width: 90%;
+        margin: 5% auto;
+        
     }
 }
 
