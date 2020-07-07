@@ -19,13 +19,14 @@ $(document).ready(function(){
         e.preventDefault();
         let email = $("#email").val();  
         let senha = $("#senha").val();  
-        let repetir_senha = $("#repetir-senha").val();
+        let repetir_senha = $("#repetir_senha").val();
 
         // .done executa direto diferente do succes que so executa se der sucesso o return
         $.post( rota, {"tipo": "login-registro", "email": email, "senha": senha, "repetir_senha": repetir_senha})
             .done(function(retorno) 
             {            
-                alert(retorno);
+                alert("Confirmação enviada para o seu e-mail");
+                window.location.href = "http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/";
             }) 
          
     });   
