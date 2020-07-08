@@ -24,8 +24,8 @@ $(document).ready(function(){
         // .done executa direto diferente do succes que so executa se der sucesso o return
         $.post( rota, {"tipo": "login-registro", "email": email, "senha": senha, "repetir_senha": repetir_senha})
             .done(function(retorno) 
-            {            
-                alert("Confirmação enviada para o seu e-mail");
+            {   
+                alert("Confirmação enviada para o email");         
                 window.location.href = "http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/";
             }) 
          

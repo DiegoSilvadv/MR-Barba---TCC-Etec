@@ -5,7 +5,8 @@ create table login_user (
     id_login int primary KEY auto_increment,
     email VARCHAR(200),
     senha varchar(100),
-    repetir_senha VARCHAR(100)
+    repetir_senha VARCHAR(100),
+    token CHAR(64)
 );
 
 create table adm (
