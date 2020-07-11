@@ -29,7 +29,6 @@ function RegistrarLogin(){
             .done(function(retorno) 
             {   
                 alert("E-mail encaminhado para confirmação de login");         
-                window.location.href = "http://localhost:4000/agenda/mrbarba_tcc/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home";
             }) 
          
     });   

@@ -5,7 +5,6 @@ $(document).ready(function(){
     $("#btn-login").click(function(){
         Login();
     })
-
     function Login(){
         $("#form-login").submit(function(e){
             e.preventDefault();

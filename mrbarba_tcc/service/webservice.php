@@ -16,7 +16,7 @@
         }   
         else if ($senha == $repetir_senha){  
             $token = bin2hex(random_bytes(32));   
-            $sql = "INSERT INTO login_user VALUES(0, :email, :senha, :repetir_senha, :token)";
+            $sql = "INSERT INTO login_user VALUES(0, :email, sha1(:senha), sha1(:repetir_senha), :token)";
             $command = $con->prepare($sql);
             $command->bindParam(":email", $email);
             $command->bindParam(":senha", $senha);
@@ -32,15 +32,21 @@
 
     else if ($tipo == "login"){
         if(isset($email, $senha)){
-            $sql = "SELECT email, senha FROM login_user WHERE email=:email AND senha=:senha";
+            $sql = "SELECT email, senha FROM login_user WHERE email=:email AND senha=sha1(:senha)";
             $command = $con->prepare($sql);
             $command->bindParam(":email", $email);
-            $command->bindParam(":senha", $password);
+            $command->bindParam(":senha", $senha);
             $command->execute();
-            $data = $command->fetch();
-            echo "logado";
+            $data = $command->fetch(PDO::FETCH_OBJ);
+
+            if(is_object($data)){
+                echo "ok";
+            } else {
+                echo "não logado";
+            }
+
         } else {
-            echo "não logado";
+            echo "Informações invalida ";
         }
             
     }
