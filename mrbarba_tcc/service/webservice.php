@@ -7,7 +7,9 @@
     global $con;
     $tipo = $_POST["tipo"];
     extract($_POST);
+
     if($tipo == "login-registro") {
+
         // registro de usuarios
         if(!isset($_POST["email"]) && isset($_POST["senha"]) && isset($_POST["repetir_senha"]) ){
             echo "Por favor verifique os dados!"; 
@@ -27,5 +29,20 @@
         }
            
     } 
+
+    else if ($tipo == "login"){
+        if(isset($email, $senha)){
+            $sql = "SELECT email, senha FROM login_user WHERE email=:email AND senha=:senha";
+            $command = $con->prepare($sql);
+            $command->bindParam(":email", $email);
+            $command->bindParam(":senha", $password);
+            $command->execute();
+            $data = $command->fetch();
+            echo "logado";
+        } else {
+            echo "não logado";
+        }
+            
+    }
 
 ?>

@@ -18,6 +18,8 @@
     <!--============================================================================================================-->
     <script src="../js/bootstrap.min.js"></script>
     <!--============================================================================================================-->
+    <script src="../js/registrar_login.js"></script>
+    <!--============================================================================================================-->
     <script src="../js/login.js"></script>
     <!--============================================================================================================-->
     <script src="../js/rotas.js"></script>
@@ -48,8 +50,8 @@
                 <label for="senha">Repetir senha</label>
                 <input type="password" name="repetir_senha" id="repetir_senha" placeholder="Repetir senha">
             </div>
-                <button type="submit" id="btn-login">Login</button>
-                <button type="submit" id="btn-registrar">Registrar-se</button>
+                <button type="submit" id="btn-login" onclick="Login();">Login</button>
+                <button type="submit" id="btn-registrar" onclick="RegistrarLogin()">Registrar-se</button>
                 <a href="#" id="registrar-login">Registrar-se</a>   
         </form>
     </div>
