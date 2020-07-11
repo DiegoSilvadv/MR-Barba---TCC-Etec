@@ -25,7 +25,7 @@ $(document).ready(function(){
         $.post( rota, {"tipo": "login-registro", "email": email, "senha": senha, "repetir_senha": repetir_senha})
             .done(function(retorno) 
             {   
-                alert("Confirmação enviada para o email");         
+                alert("Email encaminhado");         
                 window.location.href = "http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/";
             }) 
          
