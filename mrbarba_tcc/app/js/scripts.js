@@ -12,10 +12,9 @@ $(document).ready(function(){
         $("#cad-servico").click(function(){
             $("#modal-2").toggle(1000);            
         });
-
-
-
+    //mascaras 
     $("#txttelefone").mask("(99) 9 9999-9999") 
+    //função para digitar apenas letras
     function ApenasLetras(e, t) {
         try {
             if (window.event) {
@@ -37,6 +36,22 @@ $(document).ready(function(){
         } catch (err) {
             alert(err.Description);
         }
+    }
+    // verificar email 
+    function verificaremail(email){
+        if(email.split(" ").length>1)
+          return false;
+        let partes = email.split("@");
+        if(partes.length == 2){
+          return partes[1].split(".").length>1;
+        }
+        else{
+          return false;
+        }
+    }
+    //verificar senha com quantidade minima de digitos 6
+    function verificarsenha(senha, rsenha, qtddig){
+        return (senha == rsenha && senha.length>=qtddig);
     }
     
 });

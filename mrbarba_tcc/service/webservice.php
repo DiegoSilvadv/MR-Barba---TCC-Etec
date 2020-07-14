@@ -8,6 +8,8 @@
     $tipo = $_POST["tipo"];
     extract($_POST);
 
+    
+    
     if($tipo == "login-registro") {
 
         // registro de usuarios
@@ -23,7 +25,10 @@
             $command->bindParam(":repetir_senha", $repetir_senha);
             $command->bindParam(":token", $token);
             $command->execute();
-            EnviarEmail($email); 
+            if(EnviarEmail($email)){
+                echo json_encode("E-mail encaminhado para confirmação de login...", JSON_UNESCAPED_UNICODE);
+            } 
+
         } else {
             Echo "Dados não correspondentes";
         }
@@ -31,6 +36,7 @@
     } 
 
     else if ($tipo == "login"){
+
         if(isset($email, $senha)){
             $sql = "SELECT email, senha FROM login_user WHERE email=:email AND senha=sha1(:senha)";
             $command = $con->prepare($sql);
@@ -38,15 +44,9 @@
             $command->bindParam(":senha", $senha);
             $command->execute();
             $data = $command->fetch(PDO::FETCH_OBJ);
-
-            if(is_object($data)){
-                echo "ok";
-            } else {
-                echo "não logado";
-            }
-
+            echo "Bem vindo";
         } else {
-            echo "Informações invalida ";
+            echo "Informações inválida";
         }
             
     }

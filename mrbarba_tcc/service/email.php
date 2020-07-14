@@ -27,7 +27,7 @@ function EnviarEmail($email){
     $mail->Body = 'Para confirmar seu cadastro clique <a href="http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home/index.html">Aqui</a> ';
     $mail->AltBody = 'Email de teste';
     $envio = $mail->Send();
-    
+        
 }
 
 ?>
