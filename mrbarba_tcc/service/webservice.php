@@ -2,7 +2,7 @@
     header("Access-Control-Allow-Origin: *");
     include_once "conexao.php";
     include_once "funcoes.php";
-    include_once "email.php";
+    // include_once "email.php";
 
     global $con;
     $tipo = $_POST["tipo"];
@@ -14,40 +14,10 @@
         arrayJSON($response);    
     }
     
-
     function arrayJSON($response){
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
         exit;
     }
-
-    
-    
-    if($tipo == "login-registro") {
-
-        // registro de usuarios
-        if(!isset($_POST["email"]) && isset($_POST["senha"]) && isset($_POST["repetir_senha"]) ){
-            echo "Por favor verifique os dados!"; 
-        }   
-        else if ($senha == $repetir_senha){  
-            $token = bin2hex(random_bytes(32));   
-            $sql = "INSERT INTO login_user VALUES(0, :email, sha1(:senha), sha1(:repetir_senha), :token)";
-            $command = $con->prepare($sql);
-            $command->bindParam(":email", $email);
-            $command->bindParam(":senha", $senha);
-            $command->bindParam(":repetir_senha", $repetir_senha);
-            $command->bindParam(":token", $token);
-            EnviarEmail($email);
-            if($command->execute()){
-                $response["status"] = 1;
-                arrayJSON($response);
-            }
-            
-
-        } else {
-            Echo "Dados não correspondentes";
-        }
-           
-    } 
 
     function checkLogin(){
         global $con;
@@ -64,6 +34,32 @@
         return 0;    
     }
     
+    if($tipo == "login-registro") {
+
+        // registro de usuarios
+        if(!isset($_POST["email"]) && isset($_POST["senha"]) && isset($_POST["repetir_senha"]) ){
+            echo "Por favor verifique os dados!"; 
+        }   
+        else if ($senha == $repetir_senha){  
+            $token = bin2hex(random_bytes(32));   
+            $sql = "INSERT INTO login_user VALUES(0, :email, sha1(:senha), sha1(:repetir_senha), :token)";
+            $command = $con->prepare($sql);
+            $command->bindParam(":email", $email);
+            $command->bindParam(":senha", $senha);
+            $command->bindParam(":repetir_senha", $repetir_senha);
+            $command->bindParam(":token", $token);
+            
+            if($command->execute()){
+                $response["status"] = 1;
+                arrayJSON($response);
+            }
+            
+        } else {
+            Echo "Dados não correspondentes";
+        }
+           
+    } 
+
     if($tipo == "checkCookie"){
         if(checkLogin()==1){    
             $response["status"] = 1;
@@ -76,13 +72,13 @@
 
     else if ($tipo == "login"){
 
-        if(isset($email, $senha)){
             $sql = "SELECT * FROM login_user WHERE email=:email AND senha=sha1(:senha)";
             $command = $con->prepare($sql);
             $command->bindParam(":email", $email);
             $command->bindParam(":senha", $senha);
             $command->execute();
             $data = $command->fetch();
+           
             
             if($data){
                 
@@ -99,12 +95,29 @@
                     arrayJSON($response);
                 } else{
                     error("Error on generate Token");
-                }
-            }  
-        } else {
-            echo "Informações inválida";
+                } 
+            } else {
+                echo "Não existe esse registro, por favor registre-se";
+            }
         }
+
+    else if($tipo == "cad-servico"){
+        
+        $sql = "INSERT INTO servico VALUES(0, :tipo_servico)";
+        $command = $con->prepare($sql);
+        $command->bindParam(":tipo_servico", $servico);
             
+        if($command->execute()){
+            $response["status"] = 1;
+            arrayJSON($response);
+            echo"ok";
+        } else {
+            echo "Erro de conexão";
+        }
+        
     }
+
+
+
 
 ?>

@@ -18,17 +18,13 @@
     <!--============================================================================================================-->
     <script src="../js/bootstrap.min.js"></script>
     <!--============================================================================================================-->
-    <script src="../js/rotas.js"></script>
-
+    <script type="text/javascript" src="../js/rotas.js"></script>
     <!--============================================================================================================-->
-    <script src="../js/login.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
     <!--============================================================================================================-->
-    <script src="../js/scripts.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
     <!--============================================================================================================-->
-    
-
    
-    
     <title>Login</title>
 </head>
 <body>
@@ -39,19 +35,19 @@
         <img src="../assents/logo-laranja.png" alt="Logo-MR-barba">
         <h5>Bem vindo ao MR Barba Social Club</h5>
         <!-- váidando no frontend onsubmit -->
-        <form id="form-login">
+        <form id="form-login" method="POST">
             <div class="inputs">
                 <label for="login">Email</label>
-                <input type="text" name="email" id="email" placeholder="Email">
+                <input type="text" name="email" id="email" value="" placeholder="Email">
             </div>
 
             <div class="inputs">
                 <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha" placeholder="Senha">
+                <input type="password" name="senha" id="senha" value="" placeholder="Senha">
             </div>
             <div class="inputs" id="repetir-senha">
                 <label for="senha">Repetir senha</label>
-                <input type="password" name="repetir_senha" id="repetir_senha" placeholder="Repetir senha">
+                <input type="password" name="repetir_senha" id="repetir_senha" value="" placeholder="Repetir senha">
             </div>
                 <button type="submit" id="btn-login" >Login</button>
                 <button type="submit" id="btn-registrar">Registrar-se</button>

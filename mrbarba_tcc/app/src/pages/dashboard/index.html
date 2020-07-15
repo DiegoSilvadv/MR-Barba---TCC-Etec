@@ -17,7 +17,11 @@
     <script src="../../../js/bootstrap.min.js"></script>
     <!--===============================================================================================-->
     <script src="../../../js/scripts.js"></script>
-    
+    <!--===============================================================================================-->
+    <script src="../../../js/dashboard.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../../js/rotas.js"></script>
+
     <title>Agendamentos Clientes</title>
 </head>
 <body id="listagem">
@@ -29,8 +33,8 @@
     <div class="">
       <div class="navbar-nav">
         <a class="nav-item nav-link active" href="#" id="agendas">Agendas</a>
-        <a class="nav-item nav-link active" href="#" id="cad-barbeiro">Cadastrar Barbeiro</a>
-        <a class="nav-item nav-link active" href="#" id="cad-servico">Cadastrar serviço</a>     
+        <a class="nav-item nav-link active" href="#" id="barbeiros">Cadastrar Barbeiro</a>
+        <a class="nav-item nav-link active" href="#" id="servicos">Cadastrar serviço</a>     
       </div>
     </div>
   </nav>
@@ -67,33 +71,46 @@
     </table>
   </section>
   <!--===========================================================================================================-->
+
+
+
+
+
+  <!-- Serviços -->
   <section id="modal">
     <div class="container-modal" id="modal-1">
       <h3>Cadastrar Serviço</h3>
-        <form action="#" id="form-add-barbeiro">
+        <form id="form-add-servico" method="POST">
           <div class="info">
-            <label for="txtnome">Nome do Barbeiro:</label>
-                <input type="text" name="txtnome" maxlength="100" required="required">
-          
-                <label for="txtdata">Horário</label>
-                <input type="datetime-local" name="txtdata" id="txtdata" required="required">
+            <label >Serviço:</label>
+            <input type="text" name="servico" id="servico" value="" required="required" placeholder="Tipo de serviço">
 
-                <button id="btnsalvar" >Cadastrar</button>      
+            <button type="submit" id="cad-servico" >Cadastrar</button>      
           </div>    
-        </form>
-        
+        </form>   
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     <div class="container-modal" id="modal-2">
       <h3>Cadastrar Barbeiro</h3>
-        <form action="#" id="form-add-barbeiro">
+        <form id="form-add-barbeiro" method="POST">
           <div class="info">
             <label for="txtnome">Nome do Barbeiro:</label>
-            <input type="text" name="txtnome" maxlength="100" required="required">
-          
-            <label for="txtdata">Horário</label>
-            <input type="datetime-local" name="txtdata" id="txtdata" required="required">
-            <button id="btnsalvar">Cadastrar</button>   
+            <input type="text" name="txtnome" id="" maxlength="100" required="required">
+        
+            <button type="submit" id="btnsalvar">Cadastrar</button>   
           </div>  
         </form> 
     </div>  

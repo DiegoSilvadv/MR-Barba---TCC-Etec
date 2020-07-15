@@ -10,6 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 
 function EnviarEmail($email){
     
+    
     $mail = new PHPMailer(true);
 
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -24,7 +25,7 @@ function EnviarEmail($email){
                 
     $mail->isHTML(true);
     $mail->Subject = 'Confirmacao de email';
-    $mail->Body = 'Para confirmar seu cadastro clique <a href="http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home/index.html">Aqui</a> ';
+    $mail->Body = 'Para confirmar seu cadastro clique <a href="http://localhost:4000/agenda/mrbarba_tcc/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home/">Aqui</a> ';
     $mail->AltBody = 'Email de teste';
     $envio = $mail->Send();
         

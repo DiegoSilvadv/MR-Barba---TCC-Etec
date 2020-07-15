@@ -5,12 +5,12 @@ $(document).ready(function(){
             $("#content").toggle(1000);            
         });
         
-        $("#cad-barbeiro").click(function(){
-            $("#modal-1").toggle(1000);            
+        $("#barbeiros").click(function(){
+            $("#modal-2").toggle(1000);            
         });
 
-        $("#cad-servico").click(function(){
-            $("#modal-2").toggle(1000);            
+        $("#servicos").click(function(){
+            $("#modal-1").toggle(1000);            
         });
     //mascaras 
     $("#txttelefone").mask("(99) 9 9999-9999") 
