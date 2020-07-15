@@ -7,7 +7,7 @@ create table login_user (
     senha varchar(100),
     repetir_senha VARCHAR(100),
     token CHAR(64)
-);
+)ENGINE = innodb;
 
 create table adm (
     id_user INT PRIMARY KEY AUTO_INCREMENT,
@@ -26,6 +26,16 @@ create table servico (
 
 ) ENGINE = innodb;
 
+create table dispositivo (
+    id_dispositivo int primary key AUTO_INCREMENT,
+    fkusuario int, 
+    token VARCHAR(50),
+    sistema VARCHAR(20),
+    data_criacao DATETIME
+    
+) ENGINE = innodb;
+
+
 create table agendamento (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(120) NOT NULL,
@@ -35,6 +45,11 @@ create table agendamento (
     id_barbeiro INT
 
 ) ENGINE = innodb;
+
+ALTER TABLE `dispositivo`
+ADD CONSTRAINT `dispositivo_usuario` 
+FOREIGN KEY ( `fkusuario` ) 
+REFERENCES `login_user` ( `id_login` );
 
 ALTER TABLE `agendamento`
 ADD CONSTRAINT `fk_id_barbeiro` 
