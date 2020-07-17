@@ -106,16 +106,28 @@
         $sql = "INSERT INTO servico VALUES(0, :tipo_servico)";
         $command = $con->prepare($sql);
         $command->bindParam(":tipo_servico", $servico);
+        if($command->execute()){
+            echo"Cadastrado com sucesso"; 
+        }else {
+            echo "Erro de conexão";
+        }    
+    }
+
+    else if($tipo == "cad-barbeiro"){
+        
+        $sql = "INSERT INTO barbeiro VALUES(0, :nome_barbeiro)";
+        $command = $con->prepare($sql);
+        $command->bindParam(":nome_barbeiro", $nome_barbeiro);
             
         if($command->execute()){
-            $response["status"] = 1;
-            arrayJSON($response);
-            echo"ok";
+            echo"Cadastrado com sucesso";    
         } else {
             echo "Erro de conexão";
         }
         
     }
+
+    
 
 
 
