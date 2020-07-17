@@ -112,10 +112,17 @@ td img {
     list-style-type: none;
 }
 
-.listagem-barbeiro li {
-    list-style-type: none;
+#listagem-barbeiro{
+    width: 100%;
+    margin: 0 auto;
 }
-.listagem-barbeiro img {
+
+/* #listagem-barbeiro tr {
+    width: 100%;
+    margin-left: 50%;
+} */
+
+#listagem-barbeiro img {
     height: 30px;
     margin-left: 1%;
     width: 30px;
