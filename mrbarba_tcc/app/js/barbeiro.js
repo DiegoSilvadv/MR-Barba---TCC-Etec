@@ -1,3 +1,20 @@
+
+
+
+function ListarBarbeiroSelect(){
+    $.post(rota, {"tipo": "listar-barbeiro", "nome_barbeiro": "" })
+    .done(function(retorno){
+
+        let json = $.parseJSON(retorno);
+        let lista_barbeiro = $("#tipo-barbeiro");
+       
+        for (let i = 0; i < json.length; i++) {
+            lista_barbeiro.append(`<option value='${json[i].id_barbeiro}'>${json[i].nome_barbeiro}</option>`);
+        }
+        
+    });
+}
+
 function ListarBarbeiro(){
     $.post(rota, {"tipo": "listar-barbeiro", "nome_barbeiro": "" })
     .done(function(retorno){
@@ -30,4 +47,5 @@ function ListarBarbeiro(){
 
 $(document).ready(function(){
     ListarBarbeiro();
+    ListarBarbeiroSelect();
 });
