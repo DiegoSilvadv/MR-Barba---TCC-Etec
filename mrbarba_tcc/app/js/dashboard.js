@@ -5,7 +5,7 @@ $(document).ready(function(){
         $("#form-add-servico").submit(function(event) {
             event.preventDefault();
             let servico = $("#servico").val();
-            $.post(rota, {"tipo": "cad-servico", "servico": servico})
+            $.post(rota, {"tipo": "cad-servico", "tipo_servico": tipo_servico})
                 .done(function(retorno){    
                         alert(retorno);
                         $("#servico").val("");

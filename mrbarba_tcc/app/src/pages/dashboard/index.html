@@ -23,6 +23,8 @@
     <script src="../../../js/rotas.js"></script>
     <!--===============================================================================================-->
     <script src="../../../js/barbeiro.js" ></script>
+    <!--===============================================================================================-->
+    <script src="../../../js/servico.js"></script>
 
     <title>Agendamentos Clientes</title>
 </head>
@@ -37,6 +39,8 @@
         <a class="nav-item nav-link active" href="#" id="agendas">Agendas</a>
         <a class="nav-item nav-link active" href="#" id="barbeiros">Cadastrar Barbeiro</a>
         <a class="nav-item nav-link active" href="#" id="servicos">Cadastrar serviço</a>     
+        <a class="nav-item nav-link active" href="#" id="list-barbeiro">Listar barbeiros</a>     
+        <a class="nav-item nav-link active" href="#" id="list-servico">Listar serviços</a>     
       </div>
     </div>
   </nav>
@@ -106,31 +110,36 @@
     </div>  
   </section>
 
-  <section id="listagem-barbeiro">
-    <div>
-      <table>
+  <section id="barbeiros-registro">
+    <h3>Barbeiros</h3>
+    <table class="table table-striped table-light col-8 barber ">
+      <thead class="thead-dark">
         <tr>
-          <th>ID</th>
-          <th>Nome</th>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Configuraçoes</th>
         </tr>
-          <h3>listagem de Barbeiros</h3>    
-      </table>
-      
-    </div>
+      </thead>
+      <tbody id="listagem-barbeiro">
+        
+      </tbody>
+    </table>
   </section>
 
-  <section class="listagem-servicos" id="servico">
-    <ul>
-      <h3>listagem de serviços</h3>
-      <li>dito
-        <a href="#">
-          <img src="https://image.flaticon.com/icons/svg/395/395848.svg" alt="Confirmação">
-        </a>
-        <a href="#">
-          <img src="https://image.flaticon.com/icons/svg/257/257198.svg" alt="Confirmação">
-        </a>
-      </li>
-    </ul>
+  <section id="servico-registro">
+    <h3>Serviços</h3>
+    <table class="table table-striped table-light col-8 barber ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Tipo de Serviço</th>
+          <th scope="col">Configuraçoes</th>
+        </tr>
+      </thead>
+      <tbody id="listagem-servico">
+        
+      </tbody>
+    </table>
   </section>
     
 

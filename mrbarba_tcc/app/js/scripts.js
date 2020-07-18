@@ -12,6 +12,14 @@ $(document).ready(function(){
         $("#servicos").click(function(){
             $("#modal-1").toggle(1000);            
         });
+
+        $("#list-barbeiro").click(function(){
+            $("#barbeiros-registro").toggle(1000);            
+        });
+
+        $("#list-servico").click(function(){
+            $("#servico-registro").toggle(1000);            
+        });
     //mascaras 
     $("#txttelefone").mask("(99) 9 9999-9999") 
     //função para digitar apenas letras

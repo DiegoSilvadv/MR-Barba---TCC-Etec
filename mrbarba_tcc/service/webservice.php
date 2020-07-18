@@ -102,11 +102,11 @@
         }
 
     
-        else if($tipo == "cad-servico"){
+    else if($tipo == "cad-servico"){
         
         $sql = "INSERT INTO servico VALUES(0, :tipo_servico)";
         $command = $con->prepare($sql);
-        $command->bindParam(":tipo_servico", $servico);
+        $command->bindParam(":tipo_servico", $tipo_servico);
         if($command->execute()){
             echo"Cadastrado com sucesso"; 
         }else {
@@ -130,6 +130,14 @@
 
     else if($tipo == "listar-barbeiro") {
         $sql = "SELECT * FROM barbeiro";
+        $command = $con->prepare($sql);
+        $command->execute();
+        $data = $command->fetchAll();
+        arrayJSON($data);
+    }
+
+    else if($tipo == "listar-servico") {
+        $sql = "SELECT * FROM servico";
         $command = $con->prepare($sql);
         $command->execute();
         $data = $command->fetchAll();

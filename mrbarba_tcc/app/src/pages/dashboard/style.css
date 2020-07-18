@@ -103,29 +103,21 @@ td img {
 
 
 /* listagem de serviços */
-.listagem-servicos img{
+#listagem-servico img {
     height: 30px;
     margin-left: 1%;
     width: 30px;
 }
-.listagem-servicos li{
-    list-style-type: none;
-}
-
-#listagem-barbeiro{
-    width: 100%;
-    margin: 0 auto;
-}
-
-/* #listagem-barbeiro tr {
-    width: 100%;
-    margin-left: 50%;
-} */
 
 #listagem-barbeiro img {
     height: 30px;
     margin-left: 1%;
     width: 30px;
 }
+
+
+
+
+
 
 
