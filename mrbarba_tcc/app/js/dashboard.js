@@ -2,11 +2,12 @@ $(document).ready(function(){
     
     //cadastrar um serviço
     $("#cad-servico").click(function(){
+           
         $("#form-add-servico").submit(function(event) {
-            event.preventDefault();
-            let servico = $("#servico").val();
+            event.preventDefault(); 
+            let tipo_servico = $("#servico").val();
             $.post(rota, {"tipo": "cad-servico", "tipo_servico": tipo_servico})
-                .done(function(retorno){    
+                .done(function(retorno){ 
                         alert(retorno);
                         $("#servico").val("");
                 });
@@ -23,6 +24,22 @@ $(document).ready(function(){
             .done(function(retorno){    
                     alert(retorno);
                     $("#barbeiro").val("");
+            })
+        });
+    });
+
+    //cadastrar um horario
+    $("#cad-horario").click(function(){
+        $("#form-add-horario").submit(function(event) {
+            event.preventDefault();
+        let dia = $("#dia").val();
+        let hora = $("#hora").val();
+
+        $.post(rota, {"tipo": "cad-horario", "dia": dia, "hora": hora})
+            .done(function(retorno){    
+                    alert(retorno);
+                    $("#dia").val("");
+                    $("#hora").val("");
             })
         });
     });

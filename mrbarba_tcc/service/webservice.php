@@ -128,6 +128,29 @@
         
     }
 
+    else if ($tipo == "cad-horario"){
+        $sql = "INSERT INTO horario VALUES(0, :dia, :hora)";
+        $command = $con->prepare($sql);
+        $command->bindParam(":dia", $dia);
+        $command->bindParam(":hora", $hora);
+            
+        if($command->execute()){
+            echo"Cadastrado com sucesso";    
+        } else {
+            echo "Erro de conexão";
+        }
+    }
+
+
+    
+    else if($tipo == "listar-horario") {
+        $sql = "SELECT * FROM horario";
+        $command = $con->prepare($sql);
+        $command->execute();
+        $data = $command->fetchAll();
+        arrayJSON($data);
+    }
+
     else if($tipo == "listar-barbeiro") {
         $sql = "SELECT * FROM barbeiro";
         $command = $con->prepare($sql);

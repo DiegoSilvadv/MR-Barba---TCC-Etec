@@ -1,5 +1,5 @@
 function ListarServico(){
-    $.post(rota, {"tipo": "listar-servico", "tipo_servi": "" })
+    $.post(rota, {"tipo": "listar-servico", "tipo_servico": "" })
     .done(function(retorno){
 
         let json = $.parseJSON(retorno);
@@ -27,7 +27,22 @@ function ListarServico(){
         
     });
 }
+function ListarServicoSelect(){
+    $.post(rota, {"tipo": "listar-servico", "tipo_servico": "" })
+    .done(function(retorno){
+
+        let json = $.parseJSON(retorno);
+        let lista_servico = $("#tipo-serviço");
+        lista_servico.append(`<option value='0'>Selecione uma opção</option>`);
+       
+        for (let i = 0; i < json.length; i++) {
+            lista_servico.append(`<option value='${json[i].id_servico}'>${json[i].tipo_servico}</option>`);
+        }
+        
+    });
+}
 
 $(document).ready(function(){
     ListarServico();
+    ListarServicoSelect();
 });

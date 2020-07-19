@@ -35,12 +35,18 @@ create table dispositivo (
     
 ) ENGINE = innodb;
 
+create table horario (
+    id_horario int PRIMARY key auto_increment,
+    dia varchar(10),
+    hora varchar(5)
+) ENGINE = innodb;
+
 
 create table agendamento (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(120) NOT NULL,
-    horario DATETIME NOT NULL,
     contato VARCHAR(11) NOT NULL,
+    id_horario INT,
     id_servico INT,
     id_barbeiro INT
 

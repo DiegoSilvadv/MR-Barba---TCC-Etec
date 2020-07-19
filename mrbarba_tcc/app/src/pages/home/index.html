@@ -24,6 +24,8 @@
     <script src="../../../js/barbeiro.js"></script>
     <!--============================================================================================================-->
     <script src="../../../js/servico.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../../js/horario.js"></script>
     <title>Mr Barba</title>
 </head>
 
@@ -123,15 +125,15 @@
         <div id="image-form">
         
         </div>
-        <form action="http://127.0.0.1:5500/app/src/pages/index.html"  id="form-agendamento">
+        <form id="form-agendamento">
             <div>
                 <label for="txtnome">Nome</label>
-                <input type="text" name="txtnome" id="txtnome" maxlength="100" placeholder="Digite seu nome" 
-                    required="required" onchange="verificar()"
-                >
+                <input type="text" name="txtnome" id="txtnome" maxlength="100" placeholder="Digite seu nome" required="required" >
            
                 <label for="txtdata">Horário</label>
-                <input type="datetime-local" name="txtdata" id="txtdata" required="required" >
+                <select id="horario" required="required">
+                        
+                </select>
 
                 <label for="txttelefone">Telefone</label>
                 <input type="tel" name="txttelefone" id="txttelefone" maxlength="16" required="required"/>
@@ -147,7 +149,7 @@
                 </select>
             </div>
 
-            <button id="btnsalvar" >Agendar</button>     
+            <button type="submit" id="btn-agendar" >Agendar</button>     
         </form> 
     </div>
 

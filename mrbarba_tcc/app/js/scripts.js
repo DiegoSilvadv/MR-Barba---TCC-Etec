@@ -9,6 +9,10 @@ $(document).ready(function(){
             $("#modal-2").toggle(1000);            
         });
 
+        $("#horarios").click(function(){
+            $("#modal-3").toggle(1000);            
+        });
+
         $("#servicos").click(function(){
             $("#modal-1").toggle(1000);            
         });
@@ -21,7 +25,7 @@ $(document).ready(function(){
             $("#servico-registro").toggle(1000);            
         });
     //mascaras 
-    $("#txttelefone").mask("(99) 9 9999-9999") 
+    $("#txttelefone").mask("(99) 9 9999-9999");
     //função para digitar apenas letras
     function ApenasLetras(e, t) {
         try {

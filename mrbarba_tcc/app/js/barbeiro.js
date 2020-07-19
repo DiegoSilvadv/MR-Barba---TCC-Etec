@@ -7,6 +7,7 @@ function ListarBarbeiroSelect(){
 
         let json = $.parseJSON(retorno);
         let lista_barbeiro = $("#tipo-barbeiro");
+        lista_barbeiro.append(`<option value='0'>Selecione uma opção</option>`);
        
         for (let i = 0; i < json.length; i++) {
             lista_barbeiro.append(`<option value='${json[i].id_barbeiro}'>${json[i].nome_barbeiro}</option>`);
