@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +16,6 @@
     <!--===============================================================================================-->
     <script src="../../../js/bootstrap.min.js"></script>
     <!--===============================================================================================-->
-    <script src="../../../js/scripts.js"></script>
-    <!--===============================================================================================-->
     <script src="../../../js/dashboard.js"></script>
     <!--===============================================================================================-->
     <script src="../../../js/rotas.js"></script>
@@ -27,6 +25,8 @@
     <script src="../../../js/servico.js"></script>
     <!--===============================================================================================-->
     <script src="../../../js/horario.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../../js/scripts.js"></script>
     
 
     <title>Agendamentos Clientes</title>
@@ -84,8 +84,6 @@
 
 
 
-
-
   <!-- Serviços -->
   <section id="modal">
     <div class="container-modal" id="modal-1">
@@ -119,15 +117,21 @@
         <form id="form-add-horario" method="POST">
           <div class="info">
             <label >Dia:</label>
-            <input type="text" name="dia" id="dia" maxlength="100" value="" placeholder="Dia" required="required">
+            <input type="text" id="txtdia" maxlength="100" value="" required="required">
             <label >Hora:</label>
-            <input type="text" name="hora" id="hora" maxlength="100" value="" placeholder="Hora" required="required">
-        
+            <input type="text" id="txthora" maxlength="100" value="" required="required">
+
+            <input type="hidden" name="tipo" value="alterar-horario">
+            <input type="hidden" name="id_horario" value="0">
             <button type="submit" id="cad-horario">Cadastrar</button>   
           </div>  
         </form> 
     </div>  
   </section>
+
+
+
+
   <!-- Listagem de barbeiros cadastrados -->
   <section id="barbeiros-registro">
     <h3>Barbeiros</h3>
@@ -178,10 +182,13 @@
       </tbody>
     </table>
   </section>
+
+
+  
     
 
-    <script src="../../../js/jquery-3.4.1.min.js"></script>
+    <!-- <script src="../../../js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script> -->
 </body>
 </html>

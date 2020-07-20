@@ -26,6 +26,14 @@ $(document).ready(function(){
         });
     //mascaras 
     $("#txttelefone").mask("(99) 9 9999-9999");
+
+    $('#txtdia').mask("99/99/9999");
+    $('#txthora').mask('99:99');
+
+    
+
+
+
     //função para digitar apenas letras
     function ApenasLetras(e, t) {
         try {

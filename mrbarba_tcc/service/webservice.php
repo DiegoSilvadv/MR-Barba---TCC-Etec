@@ -167,6 +167,37 @@
         arrayJSON($data);
     }
 
+    //delete
+    else if($tipo == "deletar-horario"){
+        
+        $sql = "DELETE FROM horario WHERE id_horario = :id_horario";
+        $command = $con->prepare($sql);
+        $command->bindParam(":id_horario", $id_horario);
+        if($command->execute()){
+            echo "Deletado com sucesso!";
+        }  
+    }
+
+    else if($tipo == "consultar-horario"){
+        $sql = "SELECT * FROM horario WHERE id_horario = :id_horario";
+        $command = $con->prepare($sql);
+        $command->bindParam(":id_horario", $id_horario);
+        $command->execute();
+        $data = $command->fetch();
+        arrayJSON($data);
+    }
+
+    else if($tipo = "alterar-horario"){
+        $sql = "UPDATE horario SET dia=:dia, hora=:hora WHERE id_horario=:id_horario";                   
+        $command = $con->prepare($sql);
+        $command->bindParam(":dia", $dia);
+        $command->bindParam(":hora", $hora);
+        $command->bindParam(":id_horario", $id_horario);
+        $command->execute();
+        $data = $command->fetch();
+        arrayJSON($data);
+    }
+    
     
 
 

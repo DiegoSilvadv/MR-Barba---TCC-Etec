@@ -32,14 +32,14 @@ $(document).ready(function(){
     $("#cad-horario").click(function(){
         $("#form-add-horario").submit(function(event) {
             event.preventDefault();
-        let dia = $("#dia").val();
-        let hora = $("#hora").val();
+        let dia = $("#txtdia").val();
+        let hora = $("#txthora").val();
 
         $.post(rota, {"tipo": "cad-horario", "dia": dia, "hora": hora})
             .done(function(retorno){    
                     alert(retorno);
-                    $("#dia").val("");
-                    $("#hora").val("");
+                    $("#txtdia").val("");
+                    $("#txthora").val("");
             })
         });
     });

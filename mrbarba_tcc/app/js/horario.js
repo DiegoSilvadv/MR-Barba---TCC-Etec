@@ -1,21 +1,21 @@
-// function ListarHorario(){
-//     $.post(rota, {"tipo": "listar-horario", "dia": "" })
-//     .done(function(retorno){
 
-//         let json = $.parseJSON(retorno);
-        
-//         let lista_horario = $("#listagem-horario");
-//         lista_horario.append(`<option value='0'>Selecione uma opção</option>`);
+function ListarHorarioSelect(){
+    $.post(rota, {"tipo": "listar-horario"})
+    .done(function(retorno){
+
+        let json = $.parseJSON(retorno);
+        let lista = $("#horario");
+        lista.append(`<option value='0'>Selecione um horário disponível</option>`);
        
-//         for (let i = 0; i < json.length; i++) {
-//             lista_horario.append(`<option value='${json[i].id_horario}'>${json[i].hora}</option>`);
-//         }
+        for (let i = 0; i < json.length; i++) {
+            lista.append(`<option value='${json[i].id_horario}'>${json[i].dia} Hora: ${json[i].hora}</option>`); 
+        }
         
-//     });
-// }
+    });
+}
 
 function ListarHorario(){
-    $.post(rota, {"tipo": "listar-horario" })
+    $.post(rota, {"tipo": "listar-horario"})
     .done(function(retorno){
 
         let json = $.parseJSON(retorno);
@@ -29,10 +29,10 @@ function ListarHorario(){
                     <td>${json[i].dia}</td>
                     <td>${json[i].hora}</td>
                     <td>
-                        <a href="javascript:Deletarbarbeiro(${json[i].id_horario})">
+                        <a href="javascript:DeletarHorario(${json[i].id_horario})">
                             <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Deletar">
                         </a>
-                        <a href="javascript:EditarBarbeiro(${json[i].id_horario}">
+                        <a href="javascript:EditarHorario(${json[i].id_horario})">
                             <img src="https://image.flaticon.com/icons/svg/860/860814.svg" alt="Editar">
                         </a>
                     </td>
@@ -44,8 +44,31 @@ function ListarHorario(){
     });
 }
 
+function DeletarHorario(id_horario){
+    $.post(rota, {"tipo": "deletar-horario", "id_horario": id_horario})
+    .done(function(retorno){
+        alert(retorno);
+        window.location = "index.html";
+    });
+}
+
+function EditarHorario(id_horario){
+    $.post(rota, {"tipo": "consultar-horario", "id_horario": id_horario}).
+        done(function(retorno){
+            
+        let json = $.parseJSON(retorno);
+
+        $("#txtdia").val(json.dia);
+        $("#txthora").val(json.hora);
+        $("button[type=submit]").html("Salvar");
+        $("button[id=cad-horario]").id("save");
+      
+    });
+}
+
 
 $(document).ready(function(){
-
-  ListarHorario();
+    
+    ListarHorario();
+    ListarHorarioSelect();
 });
