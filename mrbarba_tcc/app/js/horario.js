@@ -13,7 +13,6 @@ function ListarHorarioSelect(){
         
     });
 }
-
 function ListarHorario(){
     $.post(rota, {"tipo": "listar-horario"})
     .done(function(retorno){
@@ -32,8 +31,8 @@ function ListarHorario(){
                         <a href="javascript:DeletarHorario(${json[i].id_horario})">
                             <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Deletar">
                         </a>
-                        <a href="javascript:EditarHorario(${json[i].id_horario})">
-                            <img src="https://image.flaticon.com/icons/svg/860/860814.svg" alt="Editar">
+                        <a href="javascript:ConsultarHorario(${json[i].id_horario})">
+                            <img src="https://image.flaticon.com/icons/svg/860/860814.svg" data-toggle="modal" data-target="#exampleModalCenter" alt="Editar">
                         </a>
                     </td>
                         
@@ -43,7 +42,6 @@ function ListarHorario(){
         
     });
 }
-
 function DeletarHorario(id_horario){
     $.post(rota, {"tipo": "deletar-horario", "id_horario": id_horario})
     .done(function(retorno){
@@ -51,24 +49,33 @@ function DeletarHorario(id_horario){
         window.location = "index.html";
     });
 }
-
-function EditarHorario(id_horario){
+function ConsultarHorario(id_horario){
     $.post(rota, {"tipo": "consultar-horario", "id_horario": id_horario}).
         done(function(retorno){
             
         let json = $.parseJSON(retorno);
-
-        $("#txtdia").val(json.dia);
-        $("#txthora").val(json.hora);
-        $("button[type=submit]").html("Salvar");
-        $("button[id=cad-horario]").id("save");
-      
+        $("#txt-dia").val(json.dia);
+        $("#txt-hora").val(json.hora);
+        $("#txt-id").val(json.id_horario);
+    });      
+}
+function EditarHorario(){
+    $("#btn-update-horario").click(function(){
+        let dia = $("#txt-dia").val();
+        let hora =  $("#txt-hora").val();
+        let id_horario = $("#txt-id").val();
+        
+        $.post(rota, {"tipo": "alterar-horario", "id_horario": id_horario, "dia": dia, "hora": hora}).
+            done(function(retorno){
+                alert(retorno);
+        });
     });
 }
-
 
 $(document).ready(function(){
     
     ListarHorario();
     ListarHorarioSelect();
+    EditarHorario();
+
 });

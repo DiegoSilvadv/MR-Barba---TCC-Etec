@@ -193,9 +193,9 @@
         $command->bindParam(":dia", $dia);
         $command->bindParam(":hora", $hora);
         $command->bindParam(":id_horario", $id_horario);
-        $command->execute();
-        $data = $command->fetch();
-        arrayJSON($data);
+        
+        if($command->execute())
+            echo"Alterado com sucesso!"; 
     }
     
     

@@ -1,2 +1,2 @@
-var rota = "http://localhost:4000/agenda/mrbarba_tcc/MR-Barba---TCC-Etec/mrbarba_tcc/service/webservice.php";
+var rota = "http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/service/webservice.php";
 
