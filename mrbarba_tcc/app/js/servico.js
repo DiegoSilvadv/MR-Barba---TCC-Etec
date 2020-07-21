@@ -16,8 +16,8 @@ function ListarServico(){
                         <a href="javascript:DeletarServico(${json[i].id_servico})">
                             <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Deletar">
                         </a>
-                        <a href="javascript:EditarServico(${json[i].id_servico}">
-                            <img src="https://image.flaticon.com/icons/svg/860/860814.svg" alt="Editar">
+                        <a href="javascript:ConsultarServico(${json[i].id_servico})">
+                            <img src="https://image.flaticon.com/icons/svg/860/860814.svg" data-toggle="modal" data-target="#modal-servico" alt="Editar">
                         </a>
                     </td>
                         
@@ -41,8 +41,36 @@ function ListarServicoSelect(){
         
     });
 }
+function DeletarServico(id_servico){
+    $.post(rota, {"tipo": "deletar-servico", "id_servico": id_servico})
+    .done(function(retorno){
+        alert(retorno);
+        window.location = "index.html";
+    });
+}
+function ConsultarServico(id_servico){
+    $.post(rota, {"tipo": "consultar-servico", "id_servico": id_servico}).
+        done(function(retorno){
+
+        let json = $.parseJSON(retorno);
+        $("#txt-servico").val(json.tipo_servico);
+        $("#txt-id-servico").val(json.id_servico);
+    });      
+}
+function EditarServico(){
+    $("#btn-update-servico").click(function(){
+        let tipo_servico = $("#txt-servico").val();
+        let id_servico = $("#txt-id-servico").val();
+        
+        $.post(rota, {"tipo": "alterar-servico", "id_servico": id_servico, "tipo_servico": tipo_servico}).
+            done(function(retorno){
+                alert(retorno);
+        });
+    });
+}
 
 $(document).ready(function(){
+    EditarServico();
     ListarServico();
     ListarServicoSelect();
 });

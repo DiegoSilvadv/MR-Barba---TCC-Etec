@@ -98,7 +98,32 @@
         </form>   
     </div>
 
-    <!-- Barbeiro  -->
+    <!-- Modal update do serviços-->
+  <div class="modal fade" id="modal-servico" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-auto">
+          <label >Tipo de serviço:</label>
+          <input type="text" id="txt-servico" maxlength="100" value="" required="required">
+          <input type="hidden" id="txt-id-servico" name="id_servico" value="0">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" href="javascript:EditarServico()" id="btn-update-servico" class="btn btn-primary">Salvar alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- fim dos modais dos serviços -->
+
+
+<!-- Barbeiro  -->
     <div class="container-modal" id="modal-2">
       <h3>Cadastrar Barbeiro</h3>
         <form id="form-add-barbeiro" method="POST">
@@ -109,9 +134,42 @@
             <button type="submit" id="cad-barbeiro">Cadastrar</button>   
           </div>  
         </form> 
-    </div>  
+    </div>
 
-    <!-- horario  -->
+  <!-- Modal update do barbeiro-->
+  <div class="modal fade" id="modal-barbeiro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-auto">
+          <label >nome:</label>
+          <input type="text" id="txt-nome" maxlength="100" value="" required="required">
+          <input type="hidden" id="txt-id-barbeiro" name="id_barbeiro" value="0">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" href="javascript:EditarBarbeiro()" id="btn-update-barbeiro" class="btn btn-primary">Salvar alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- fim dos modais do barbeiro -->
+
+
+
+
+
+
+
+
+
+
+<!--inicio modal horario  -->
     <div class="container-modal" id="modal-3">
       <h3>Cadastrar Horarios disponiveis</h3>
         <form id="form-add-horario" method="POST">
@@ -128,8 +186,7 @@
         </form> 
     </div>  
   </section>
-
-  <!-- Modal update-->
+  <!-- Modal update do horario-->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -153,7 +210,7 @@
       </div>
     </div>
   </div>
-
+<!-- fim do modal do horario -->
 
 
   <!-- Listagem de barbeiros cadastrados -->

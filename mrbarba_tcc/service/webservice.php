@@ -141,8 +141,6 @@
         }
     }
 
-
-    
     else if($tipo == "listar-horario") {
         $sql = "SELECT * FROM horario";
         $command = $con->prepare($sql);
@@ -187,7 +185,7 @@
         arrayJSON($data);
     }
 
-    else if($tipo = "alterar-horario"){
+    else if($tipo == "alterar-horario"){
         $sql = "UPDATE horario SET dia=:dia, hora=:hora WHERE id_horario=:id_horario";                   
         $command = $con->prepare($sql);
         $command->bindParam(":dia", $dia);
@@ -197,6 +195,70 @@
         if($command->execute())
             echo"Alterado com sucesso!"; 
     }
+
+
+    else if($tipo == "deletar-barbeiro"){
+        
+        $sql = "DELETE FROM barbeiro WHERE id_barbeiro = :id_barbeiro";
+        $command = $con->prepare($sql);
+        $command->bindParam(":id_barbeiro", $id_barbeiro);
+        if($command->execute()){
+            echo "Deletado com sucesso!";
+        }  
+    }
+
+    else if($tipo == "deletar-servico"){
+        
+        $sql = "DELETE FROM servico WHERE id_servico = :id_servico";
+        $command = $con->prepare($sql);
+        $command->bindParam(":id_servico", $id_servico);
+        if($command->execute()){
+            echo "Deletado com sucesso!";
+        }  
+    }
+
+    
+    else if($tipo == "consultar-servico"){
+        $sql = "SELECT * FROM servico WHERE id_servico = :id_servico";
+        $command = $con->prepare($sql);
+        $command->bindParam(":id_servico", $id_servico);
+        $command->execute();
+        if($data = $command->fetch())
+            arrayJSON($data);
+    }
+    
+    else if ($tipo == "alterar-servico"){
+        $sql = "UPDATE servico SET tipo_servico = :tipo_servico WHERE id_servico= :id_servico";  
+                       
+        $command = $con->prepare($sql);
+        $command->bindParam(":tipo_servico", $tipo_servico);
+        $command->bindParam(":id_servico", $id_servico);
+        
+        if($command->execute())
+            echo"Alterado com sucesso!";
+    }
+    
+    
+    else if($tipo == "consultar-barbeiro"){
+        $sql = "SELECT * FROM barbeiro WHERE id_barbeiro = :id_barbeiro";
+        $command = $con->prepare($sql);
+        $command->bindParam(":id_barbeiro", $id_barbeiro);
+        $command->execute();
+        if($data = $command->fetch())
+            arrayJSON($data);
+    }
+
+    else if ($tipo == "alterar-barbeiro"){
+        $sql = "UPDATE barbeiro SET nome_barbeiro = :nome_barbeiro WHERE id_barbeiro= :id_barbeiro";  
+                       
+        $command = $con->prepare($sql);
+        $command->bindParam(":nome_barbeiro", $nome_barbeiro);
+        $command->bindParam(":id_barbeiro", $id_barbeiro);
+        
+        if($command->execute())
+            echo"Alterado com sucesso!";
+    }
+    
     
     
 

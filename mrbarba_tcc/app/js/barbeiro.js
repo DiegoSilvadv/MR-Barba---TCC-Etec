@@ -1,6 +1,4 @@
 
-
-
 function ListarBarbeiroSelect(){
     $.post(rota, {"tipo": "listar-barbeiro", "nome_barbeiro": "" })
     .done(function(retorno){
@@ -15,7 +13,6 @@ function ListarBarbeiroSelect(){
         
     });
 }
-
 function ListarBarbeiro(){
     $.post(rota, {"tipo": "listar-barbeiro", "nome_barbeiro": "" })
     .done(function(retorno){
@@ -31,11 +28,11 @@ function ListarBarbeiro(){
                     <td>${json[i].id_barbeiro}</td>
                     <td>${json[i].nome_barbeiro}</td>
                     <td>
-                        <a href="javascript:Deletarbarbeiro(${json[i].id_barbeiro})">
+                        <a href="javascript:DeletarBarbeiro(${json[i].id_barbeiro})">
                             <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Deletar">
                         </a>
-                        <a href="javascript:EditarBarbeiro(${json[i].id_barbeiro}">
-                            <img src="https://image.flaticon.com/icons/svg/860/860814.svg" alt="Editar">
+                        <a href="javascript:ConsultarBarbeiro(${json[i].id_barbeiro})">
+                            <img src="https://image.flaticon.com/icons/svg/860/860814.svg" data-toggle="modal" data-target="#modal-barbeiro" alt="Editar">
                         </a>
                     </td>
                         
@@ -45,8 +42,36 @@ function ListarBarbeiro(){
         
     });
 }
+function DeletarBarbeiro(id_barbeiro){
+    $.post(rota, {"tipo": "deletar-barbeiro", "id_barbeiro": id_barbeiro})
+    .done(function(retorno){
+        alert(retorno);
+        window.location = "index.html";
+    });
+}
+function ConsultarBarbeiro(id_barbeiro){
+    $.post(rota, {"tipo": "consultar-barbeiro", "id_barbeiro": id_barbeiro}).
+        done(function(retorno){
+
+        let json = $.parseJSON(retorno);
+        $("#txt-nome").val(json.nome_barbeiro);
+        $("#txt-id-barbeiro").val(json.id_barbeiro);
+    });      
+}
+function EditarBarbeiro(){
+    $("#btn-update-barbeiro").click(function(){
+        let nome_barbeiro = $("#txt-nome").val();
+        let id_barbeiro = $("#txt-id-barbeiro").val();
+        
+        $.post(rota, {"tipo": "alterar-barbeiro", "id_barbeiro": id_barbeiro, "nome_barbeiro": nome_barbeiro}).
+            done(function(retorno){
+                alert(retorno);
+        });
+    });
+}
 
 $(document).ready(function(){
+    EditarBarbeiro();
     ListarBarbeiro();
     ListarBarbeiroSelect();
 });
