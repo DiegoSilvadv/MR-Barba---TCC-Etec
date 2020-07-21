@@ -27,6 +27,8 @@
     <script src="../../../js/horario.js"></script>
     <!--===============================================================================================-->
     <script src="../../../js/scripts.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../../js/agendar.js"></script>
     
 
     <title>Agendamentos Clientes</title>
@@ -48,41 +50,7 @@
       </div>
     </div>
   </nav>
-
-  <section id="content">
-    <table>
-      <h3>Dashboard MR Barba</h3> 
-      <tr>
-        <th>Nome</th>
-        <th>Horário</th>
-        <th>Tipo de Serviço</th>
-        <th>Valor</th>
-        <th>Confirmar</th>
-        <th>Deletar</th>
-      </tr>
-
-      <tr>
-        <td>Jill</td>
-        <td>10:20 17/04/2020</td>
-        <td>barba e cabelo</td>
-        <td>$50,00</td>
-          <td>
-            <a href="">
-                <img src="https://image.flaticon.com/icons/svg/257/257198.svg" alt="Confirmação">
-            </a>
-          </td>
-        
-          <td>
-            <a href="">
-                <img src="https://image.flaticon.com/icons/svg/395/395848.svg" alt="Confirmação">
-            </a>
-          </td>
-      </tr>
-    </table>
-  </section>
   <!--===========================================================================================================-->
-
-
 
   <!-- Serviços -->
   <section id="modal">
@@ -98,28 +66,28 @@
         </form>   
     </div>
 
-    <!-- Modal update do serviços-->
-  <div class="modal fade" id="modal-servico" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body mx-auto">
-          <label >Tipo de serviço:</label>
-          <input type="text" id="txt-servico" maxlength="100" value="" required="required">
-          <input type="hidden" id="txt-id-servico" name="id_servico" value="0">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="button" href="javascript:EditarServico()" id="btn-update-servico" class="btn btn-primary">Salvar alterações</button>
+  <!-- Modal update do serviços-->
+    <div class="modal fade" id="modal-servico" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-auto">
+            <label >Tipo de serviço:</label>
+            <input type="text" id="txt-servico" maxlength="100" value="" required="required">
+            <input type="hidden" id="txt-id-servico" name="id_servico" value="0">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" href="javascript:EditarServico()" id="btn-update-servico" class="btn btn-primary">Salvar alterações</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 <!-- fim dos modais dos serviços -->
 
 
@@ -159,12 +127,6 @@
     </div>
   </div>
 <!-- fim dos modais do barbeiro -->
-
-
-
-
-
-
 
 
 
@@ -212,11 +174,32 @@
   </div>
 <!-- fim do modal do horario -->
 
+<!-- listagem de horarios agendados -->
+<section id="agenda-registros">
+  <h3>Agendamentos</h3>
+  <table class="table table-striped table-light col-10 barber ">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Dia</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Tipo de Serviço</th>
+        <th scope="col">Barbeiro</th>
+        <th scope="col">Configurações</th>
+      </tr>
+    </thead>
+    <tbody id="listagem-registro">
+      
+    </tbody>
+  </table>
+</section>
 
   <!-- Listagem de barbeiros cadastrados -->
   <section id="barbeiros-registro">
     <h3>Barbeiros</h3>
-    <table class="table table-striped table-light col-8 barber ">
+    <table class="table table-striped table-light col-10 barber ">
       <thead class="thead-dark">
         <tr>
           <th scope="col">ID</th>
@@ -233,7 +216,7 @@
   <!-- listagem de serviços cadastrados -->
   <section id="servico-registro">
     <h3>Serviços</h3>
-    <table class="table table-striped table-light col-8 barber ">
+    <table class="table table-striped table-light col-10 barber ">
       <thead class="thead-dark">
         <tr>
           <th scope="col">ID</th>
@@ -250,7 +233,7 @@
   <!-- listagem de horarios -->
   <section id="horario-registro">
     <h3>Horários</h3>
-    <table class="table table-striped table-light col-8 barber ">
+    <table class="table table-striped table-light col-10 barber ">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Dia</th>

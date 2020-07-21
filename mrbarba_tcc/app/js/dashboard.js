@@ -43,6 +43,26 @@ $(document).ready(function(){
             })
         });
     });
+
+    $("#btn-agendar").click(function(){
+        alert("df");
+        $("#form-agendamento").submit(function(event){
+            event.preventDefault();
+        
+            let nome = $("#nome").val();
+            let email = $("#email").val();
+            let id_horario = $("#horario").val();
+            let telefone = $("#txttelefone").val();
+            let id_servico = $("#tipo-serviço").val();
+            let id_barbeiro = $("#tipo-barbeiro").val();
+
+            $.post(rota, {"tipo": "agenda", "nome": nome, "email": email, "id_horario" :id_horario, "telefone" :telefone, "id_servico": id_servico, "id_barbeiro" :id_barbeiro})
+                .done(function(retorno){ 
+                    let json = $.parseJSON(retorno)   
+                    alert(json.id_barbeiro);
+            });
+        });
+    });
     
 
 

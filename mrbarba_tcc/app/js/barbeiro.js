@@ -29,10 +29,10 @@ function ListarBarbeiro(){
                     <td>${json[i].nome_barbeiro}</td>
                     <td>
                         <a href="javascript:DeletarBarbeiro(${json[i].id_barbeiro})">
-                            <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Deletar">
+                            <img src="https://image.flaticon.com/icons/svg/325/325093.svg" alt="Deletar">
                         </a>
                         <a href="javascript:ConsultarBarbeiro(${json[i].id_barbeiro})">
-                            <img src="https://image.flaticon.com/icons/svg/860/860814.svg" data-toggle="modal" data-target="#modal-barbeiro" alt="Editar">
+                            <img src="https://image.flaticon.com/icons/svg/715/715750.svg" data-toggle="modal" data-target="#modal-barbeiro" alt="Editar">
                         </a>
                     </td>
                         

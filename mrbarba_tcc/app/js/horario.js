@@ -29,10 +29,10 @@ function ListarHorario(){
                     <td>${json[i].hora}</td>
                     <td>
                         <a href="javascript:DeletarHorario(${json[i].id_horario})">
-                            <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Deletar">
+                            <img src="https://image.flaticon.com/icons/svg/325/325093.svg" alt="Deletar">
                         </a>
                         <a href="javascript:ConsultarHorario(${json[i].id_horario})">
-                            <img src="https://image.flaticon.com/icons/svg/860/860814.svg" data-toggle="modal" data-target="#exampleModalCenter" alt="Editar">
+                            <img src="https://image.flaticon.com/icons/svg/715/715750.svg" data-toggle="modal" data-target="#exampleModalCenter" alt="Editar">
                         </a>
                     </td>
                         

@@ -26,6 +26,8 @@
     <script src="../../../js/servico.js"></script>
     <!--===============================================================================================-->
     <script src="../../../js/horario.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../../js/dashboard.js"></script>
     <title>Mr Barba</title>
 </head>
 
@@ -125,10 +127,13 @@
         <div id="image-form">
         
         </div>
-        <form id="form-agendamento">
+        <form id="form-agendamento" method="POST" >
             <div>
-                <label for="txtnome">Nome</label>
-                <input type="text" name="txtnome" id="txtnome" maxlength="100" placeholder="Digite seu nome" required="required" >
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" maxlength="100" placeholder="Digite seu nome" required="required" >
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" maxlength="100" placeholder="Digite seu email" required="required" >
            
                 <label for="txtdata">Horário</label>
                 <select id="horario" required="required">

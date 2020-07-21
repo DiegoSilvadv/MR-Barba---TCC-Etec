@@ -103,19 +103,11 @@ td img {
 
 
 /* listagem de serviços */
-#listagem-servico img {
+#listagem-servico img, #listagem-barbeiro img, #listagem-horario img, #agenda-registros img {
     height: 30px;
     margin-left: 1%;
     width: 30px;
 }
-
-#listagem-barbeiro img {
-    height: 30px;
-    margin-left: 1%;
-    width: 30px;
-}
-
-
 
 
 
