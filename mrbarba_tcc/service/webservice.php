@@ -288,6 +288,27 @@
         EnviarEmail($email);    
     }
         
+
+
+    else if ($tipo == "login-adm"){
+        $sql = "SELECT user_admin, password_admin FROM adm WHERE user_admin=:user_admin AND password_admin=sha1(:password_admin)";
+        $command = $con->prepare($sql);
+        $command->bindParam(":user_admin", $user_admin);
+        $command->bindParam(":password_admin", $password_admin);
+        
+        $command->execute();
+            $data = $command->fetch();               
+            if($data != 0){
+                // setcookie("token", $data['token'], time() + (86400 * 60), "/");
+                $response["status"] = 1;
+                arrayJSON($response);
+            } else{
+                $response["status"] = 0;
+                arrayJSON($response);
+            } 
+        
+        
+} 
    
 
 

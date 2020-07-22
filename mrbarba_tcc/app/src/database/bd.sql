@@ -12,7 +12,8 @@ create table login_user (
 create table adm (
     id_user INT PRIMARY KEY AUTO_INCREMENT,
     user_admin VARCHAR (15) NOT NULL,
-    password_admin VARCHAR (10) NOT NULL
+    password_admin char(64) NOT NULL,
+    token char(64)
 );
 
 create table barbeiro (

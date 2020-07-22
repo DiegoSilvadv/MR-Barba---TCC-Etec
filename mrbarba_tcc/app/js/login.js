@@ -11,16 +11,14 @@ $(document).ready(function(){
         $("#btn-login").hide();
     });
 
-    
-
-    $.post( rota, {"tipo": "checkCookie"})
-    .done(function(retorno) 
-    {        
-        let json = $.parseJSON(retorno);
-        if(json.status != 0){
-            window.location = "http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home/index.html";
-        } 
-    });
+    // $.post( rota, {"tipo": "checkCookie"})
+    // .done(function(retorno) 
+    // {        
+    //     let json = $.parseJSON(retorno);
+    //     if(json.status != 0){
+    //         window.location = "http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home/index.html";
+    //     } 
+    // });
     
     $("#btn-registrar").click(function(){
         $("#form-login").submit(function(event) {
