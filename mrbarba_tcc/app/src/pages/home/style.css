@@ -181,6 +181,11 @@ section p {
     
 }
 
+::-webkit-input-placeholder{
+    color: rgba(22, 21, 21, 0.5);
+    font-weight: bold;
+  }
+
 #form-agendamento div label {
     display: block;
     color: #171b20;
@@ -232,7 +237,7 @@ section p {
     height: auto;
     background-image: url(https://image.freepik.com/free-photo/3d-render-spotlights-grunge-brick-wall_1048-6284.jpg);
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -268,19 +273,21 @@ section p {
 }
 
 .contato-img {
-    width: 15%;
+    width: 25%;
     display: inline-block;
 }
 
 .contato-img img {
-    margin-top: 15%;
-    width: 50px;
     height: 50px;
+    width: 50px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
 }
 
 
 .contato-img p {
-    text-align: left;
+    text-align: center;
     padding: 2%;
     font-size: 14px;
     color: white;

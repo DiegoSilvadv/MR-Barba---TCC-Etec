@@ -30,6 +30,8 @@
     <script src="../../../js/dashboard.js"></script>
     <!--===============================================================================================-->
     <script src="../../../js/login.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../../js/animacoes.js"></script>
     <title>Mr Barba</title>
 </head>
 
@@ -55,15 +57,14 @@
                         <a class="nav-link" href="#">Contato </a>
                     </li>
                     <li class="nav-item active">
-                        <a href="#modal">
-                            <button id="btnagendar" href="#form-agendamento">Agendar Horário</button>
-                        </a>             
+                        
+                            <button id="btnagendar" href="#form-agendamento">Agendar Horário</button>             
                     </li>    
                 </ul>
             </div>            
         </nav>
 
-    <main>
+    <main id="main">
         <h3>O que oferecemos </h3>
         <p>Confira abaixo nossos serviços</p>
         
@@ -143,7 +144,7 @@
                 </select>
 
                 <label for="txttelefone">Telefone</label>
-                <input type="tel" name="txttelefone" id="txttelefone" maxlength="16" required="required"/>
+                <input type="tel" name="txttelefone" id="txttelefone" placeholder="Digite seu telefone" maxlength="25" required="required"/>
 
                 <label>Tipo de Serviço</label>
                     <select id="tipo-serviço" required="required">
