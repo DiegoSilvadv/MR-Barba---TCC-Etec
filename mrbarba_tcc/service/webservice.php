@@ -21,10 +21,9 @@
 
     function checkLogin(){
         global $con;
-        if(isset($_COOKIE["token"], $_COOKIE["id_login"])){
-            $sql = "SELECT count(*) 'qtd' FROM login_user WHERE id_login=:id_login AND token=:token";
+        if(isset($_COOKIE["token"])){
+            $sql = "SELECT count(*) 'qtd' FROM login_user WHERE token=:token";
             $command = $con->prepare($sql);
-            $command->bindParam(":id_login", $_COOKIE["id_login"]);
             $command->bindParam(":token", $_COOKIE["token"]);
             $command->execute();
             $data = $command->fetch();
@@ -64,42 +63,28 @@
         if(checkLogin()==1){    
             $response["status"] = 1;
             arrayJSON($response);
-        }     
-        else{
-            error("Você precisa fazer o login");
-        }
+        } 
     }
 
     else if ($tipo == "login"){
-
-            $sql = "SELECT * FROM login_user WHERE email=:email AND senha=sha1(:senha)";
+            $sql = "SELECT id_login, token, email, senha FROM login_user WHERE email=:email AND senha=sha1(:senha)";
             $command = $con->prepare($sql);
             $command->bindParam(":email", $email);
             $command->bindParam(":senha", $senha);
             $command->execute();
-            $data = $command->fetch();
-           
-            
-            if($data){
-                
-                $sqlToken = "UPDATE login_user SET token=:token WHERE id_login = :id_login"; 
-                $token = bin2hex(random_bytes(32));
-                $commandToken = $con->prepare($sqlToken);
-                $commandToken->bindParam(":token", $token);
-                $commandToken->bindParam(":id_login", $data["id_login"]);
-               
-                if($commandToken->execute()){
-                    setcookie("id_login", $data["id_login"] , time() + (86400 * 60), "/");
-                    setcookie("token", $token , time() + (86400 * 60), "/");
-                    $response["status"]= 1;
+            $data = $command->fetch();               
+                if($data){
+                    setcookie("token", $data['token'], time() + (86400 * 60), "/");
+                    $response["status"] = 1;
                     arrayJSON($response);
                 } else{
-                    error("Error on generate Token");
+                    $response["status"] = 0;
+                    arrayJSON($response);
                 } 
-            } else {
-                echo "Não existe esse registro, por favor registre-se";
-            }
-        }
+    } 
+     
+           
+    
 
     
     else if($tipo == "cad-servico"){
@@ -300,8 +285,7 @@
     }
 
     else if($tipo == "confirmar-agenda"){
-        EnviarEmail($email);
-           
+        EnviarEmail($email);    
     }
         
    

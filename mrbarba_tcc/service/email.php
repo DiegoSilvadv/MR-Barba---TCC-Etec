@@ -9,10 +9,8 @@ use PHPMailer\PHPMailer\Exception;
 
 
 function EnviarEmail($email){
-    
-    
-    $mail = new PHPMailer(true);
 
+    $mail = new PHPMailer(true);
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
@@ -24,10 +22,10 @@ function EnviarEmail($email){
     $mail->addAddress($email);
                 
     $mail->isHTML(true);
-    $mail->Subject = 'Confirmacao de email';
-    $mail->Body = 'Para confirmar seu cadastro clique <a href="http://localhost:4000/agenda/mrbarba_tcc/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home/">Aqui</a> ';
-    $mail->AltBody = 'Email de teste';
-    $envio = $mail->Send();
+    $mail->Subject = 'Email de confirmação';
+    $mail->Body = 'Seu agendamento foi confirmado, obrigado! ';
+    $mail->AltBody = 'Confirmação de agendamento';
+    $mail->Send();
         
 }
 

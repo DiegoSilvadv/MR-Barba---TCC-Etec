@@ -20,13 +20,12 @@ function ListarAgenda(){
                     <td>${json[i].nome_barbeiro}</td>
 
                     <td>
-                        <a href="javascript:ConfirmarAgenda(${json[i].email})">
+                        <a href="javascript:ConfirmarAgenda('${json[i].email}')">
                             <img src="https://image.flaticon.com/icons/svg/845/845646.svg" alt="Confirmação">
                         </a>
                         <a href="javascript:DeletarAgendamento(${json[i].id})">
                             <img src="https://image.flaticon.com/icons/svg/325/325093.svg" alt="Deletar">
-                        </a>
-                        
+                        </a>            
                     </td>
                         
                 </tr>`
@@ -47,12 +46,12 @@ function DeletarAgendamento(id){
 function ConfirmarAgenda(email){
     $.post(rota, {"tipo": "confirmar-agenda", "email" :email})
     .done(function(retorno){
-        alert(retorno);
+        alert("Email de confirmação enviado ao cliente");
         window.location = "index.html";
     });
 }
 
-$(document).ready(function(){
+$(document).ready(function(){   
     ListarAgenda();
 
 });

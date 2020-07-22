@@ -44,8 +44,9 @@ $(document).ready(function(){
         });
     });
 
+    // agendar
     $("#btn-agendar").click(function(){
-        alert("df");
+       
         $("#form-agendamento").submit(function(event){
             event.preventDefault();
         
@@ -58,8 +59,15 @@ $(document).ready(function(){
 
             $.post(rota, {"tipo": "agenda", "nome": nome, "email": email, "id_horario" :id_horario, "telefone" :telefone, "id_servico": id_servico, "id_barbeiro" :id_barbeiro})
                 .done(function(retorno){ 
-                    let json = $.parseJSON(retorno)   
-                    alert(json.id_barbeiro);
+
+                    alert("Agendamento feito, aguarde a confirmação em seu e-mail")
+                    nome = $("#nome").val("");
+                    email = $("#email").val("");
+                    id_horario = $("#horario").val(0);
+                    telefone = $("#txttelefone").val("");
+                    id_servico = $("#tipo-serviço").val(0);
+                    id_barbeiro = $("#tipo-barbeiro").val(0);  
+                    
             });
         });
     });
