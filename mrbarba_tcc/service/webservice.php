@@ -83,9 +83,6 @@
                 } 
     } 
      
-           
-    
-
     
     else if($tipo == "cad-servico"){
         
