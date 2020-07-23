@@ -35,11 +35,11 @@
 </head>
 <body id="listagem">
 
-  <nav class="navbar navbar-expand-lg  bg-dark">
+  <nav class="menu navbar navbar-expand-lg  bg-dark">
     <a class="navbar-brand" href="#">
       <img src="../../../assents/logo-laranja.png" alt="">
     </a>
-    <div class="">
+    <div class="menu">
       <div class="navbar-nav">
         <a class="nav-item nav-link active" href="#" id="agendas">Agendas</a>
         <a class="nav-item nav-link active" href="#" id="barbeiros">Cadastrar Barbeiro</a>
@@ -47,12 +47,30 @@
         <a class="nav-item nav-link active" href="#" id="horarios">Cadastrar horarios</a>     
         <a class="nav-item nav-link active" href="#" id="list-barbeiro">Listar barbeiros</a>     
         <a class="nav-item nav-link active" href="#" id="list-servico">Listar serviços</a>     
+        <a class="nav-item nav-link active" href="#" id="list-horario">Listar horários</a>     
       </div>
     </div>
   </nav>
   <!--===========================================================================================================-->
 
   <!-- Serviços -->
+  <!-- listagem de serviços cadastrados -->
+  <section id="servico-registro">
+    <h3>Serviços</h3>
+    <table class="table table-striped table-light col-10 barber ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Tipo de Serviço</th>
+          <th scope="col">Configuraçoes</th>
+        </tr>
+      </thead>
+      <tbody id="listagem-servico">
+        
+      </tbody>
+    </table>
+  </section>
+
   <section id="modal">
     <div class="container-modal" id="modal-1">
       <h3>Cadastrar Serviço</h3>
@@ -126,12 +144,31 @@
       </div>
     </div>
   </div>
+
+  <!-- barbeiros -->
+  <section id="barbeiros-registro">
+    <h3>Barbeiros</h3>
+    <table class="table table-striped table-light col-10 barber ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Configuraçoes</th>
+        </tr>
+      </thead>
+      <tbody id="listagem-barbeiro">
+        
+      </tbody>
+    </table>
+  </section>
+
 <!-- fim dos modais do barbeiro -->
 
 
 
 
-<!--inicio modal horario  -->
+<!-- horario  -->
+<!-- cadastrar um horario -->
     <div class="container-modal" id="modal-3">
       <h3>Cadastrar Horarios disponiveis</h3>
         <form id="form-add-horario" method="POST">
@@ -172,10 +209,27 @@
       </div>
     </div>
   </div>
+  <!-- listagem de horarios -->
+  <section id="horario-registro">
+    <h3>Horários</h3>
+    <table class="table table-striped table-light col-10 barber ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Dia</th>
+          <th scope="col">Hora</th>
+          <th scope="col">Configurações</th>
+        </tr>
+      </thead>
+      <tbody id="listagem-horario">
+        
+      </tbody>
+    </table>
+  </section>
 <!-- fim do modal do horario -->
 
-<!-- listagem de horarios agendados -->
-<section id="agenda-registros">
+<!-- agendamentos -->
+ <!-- listagem de horarios agendados -->
+ <section id="agenda-registros">
   <h3>Agendamentos</h3>
   <table class="table table-striped table-light col-10 barber ">
     <thead class="thead-dark">
@@ -195,61 +249,7 @@
     </tbody>
   </table>
 </section>
-
-  <!-- Listagem de barbeiros cadastrados -->
-  <section id="barbeiros-registro">
-    <h3>Barbeiros</h3>
-    <table class="table table-striped table-light col-10 barber ">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Configuraçoes</th>
-        </tr>
-      </thead>
-      <tbody id="listagem-barbeiro">
-        
-      </tbody>
-    </table>
-  </section>
-
-  <!-- listagem de serviços cadastrados -->
-  <section id="servico-registro">
-    <h3>Serviços</h3>
-    <table class="table table-striped table-light col-10 barber ">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Tipo de Serviço</th>
-          <th scope="col">Configuraçoes</th>
-        </tr>
-      </thead>
-      <tbody id="listagem-servico">
-        
-      </tbody>
-    </table>
-  </section>
-
-  <!-- listagem de horarios -->
-  <section id="horario-registro">
-    <h3>Horários</h3>
-    <table class="table table-striped table-light col-10 barber ">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Dia</th>
-          <th scope="col">Hora</th>
-          <th scope="col">Configurações</th>
-        </tr>
-      </thead>
-      <tbody id="listagem-horario">
-        
-      </tbody>
-    </table>
-  </section>
-
-
-  
-    
+<!-- fim dos agendamentos -->
 
     <!-- <script src="../../../js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -291,7 +291,7 @@
 
 
     else if ($tipo == "login-adm"){
-        $sql = "SELECT user_admin, password_admin FROM adm WHERE user_admin=:user_admin AND password_admin=sha1(:password_admin)";
+        $sql = "SELECT * FROM adm WHERE user_admin=:user_admin AND password_admin=sha1(:password_admin)";
         $command = $con->prepare($sql);
         $command->bindParam(":user_admin", $user_admin);
         $command->bindParam(":password_admin", $password_admin);
@@ -305,10 +305,9 @@
             } else{
                 $response["status"] = 0;
                 arrayJSON($response);
-            } 
-        
-        
-} 
+                exit;
+            }     
+    } 
    
 
 

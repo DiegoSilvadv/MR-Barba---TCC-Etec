@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script type="text/javascript" src="../../../js/jquery-3.4.1.min.js"></script>
     <!--============================================================================================================-->
     <script type="text/javascript" src="../../../js/jquery.mask.min.js"></script>
@@ -20,15 +20,16 @@
     <script src="../../../js/login_Adm.js"></script>
     <!--============================================================================================================-->
     <script src="../../../js/rotas.js"></script>
+
     <title>Document</title>
 </head>
 <body>
     <div class="login-page">
         <div class="form">
           <h3>MR Barba Social Club</h3>
-          <form id="login-form">
-            <input type="text" id="username" placeholder="username"/>
-            <input type="password" id="senha" placeholder="password"/>
+          <form id="login-form" method="POST">
+            <input type="text" id="username" values= "" placeholder="username"/>
+            <input type="password" id="senha" values= "" placeholder="password"/>
             <button type="submit" id="btn-logar">login</button>
           </form>
         </div>
