@@ -18,7 +18,6 @@
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
         exit;
     }
-
     function checkLogin(){
         global $con;
         if(isset($_COOKIE["token"])){
@@ -32,7 +31,14 @@
         }
         return 0;    
     }
-    
+    if($tipo == "checkCookie"){
+        if(checkLogin()==1){    
+            $response["status"] = 1;
+            arrayJSON($response);
+        } 
+    }
+
+// Login 
     if($tipo == "login-registro") {
 
         // registro de usuarios
@@ -58,16 +64,8 @@
         }
            
     } 
-
-    if($tipo == "checkCookie"){
-        if(checkLogin()==1){    
-            $response["status"] = 1;
-            arrayJSON($response);
-        } 
-    }
-
     else if ($tipo == "login"){
-            $sql = "SELECT id_login, token, email, senha FROM login_user WHERE email=:email AND senha=sha1(:senha)";
+        $sql = "SELECT id_login, token, email, senha FROM login_user WHERE email=:email AND senha=sha1(:senha)";
             $command = $con->prepare($sql);
             $command->bindParam(":email", $email);
             $command->bindParam(":senha", $senha);
@@ -82,34 +80,8 @@
                     arrayJSON($response);
                 } 
     } 
-     
-    
-    else if($tipo == "cad-servico"){
-        
-        $sql = "INSERT INTO servico VALUES(0, :tipo_servico)";
-        $command = $con->prepare($sql);
-        $command->bindParam(":tipo_servico", $tipo_servico);
-        if($command->execute()){
-            echo"Cadastrado com sucesso"; 
-        }else {
-            echo "Erro de conexão";
-        }    
-    }
 
-    else if($tipo == "cad-barbeiro"){
-        
-        $sql = "INSERT INTO barbeiro VALUES(0, :nome_barbeiro)";
-        $command = $con->prepare($sql);
-        $command->bindParam(":nome_barbeiro", $nome_barbeiro);
-            
-        if($command->execute()){
-            echo"Cadastrado com sucesso";    
-        } else {
-            echo "Erro de conexão";
-        }
-        
-    }
-
+// Horários
     else if ($tipo == "cad-horario"){
         $sql = "INSERT INTO horario VALUES(0, :dia, :hora)";
         $command = $con->prepare($sql);
@@ -122,7 +94,6 @@
             echo "Erro de conexão";
         }
     }
-
     else if($tipo == "listar-horario") {
         $sql = "SELECT * FROM horario";
         $command = $con->prepare($sql);
@@ -130,24 +101,6 @@
         $data = $command->fetchAll();
         arrayJSON($data);
     }
-
-    else if($tipo == "listar-barbeiro") {
-        $sql = "SELECT * FROM barbeiro";
-        $command = $con->prepare($sql);
-        $command->execute();
-        $data = $command->fetchAll();
-        arrayJSON($data);
-    }
-
-    else if($tipo == "listar-servico") {
-        $sql = "SELECT * FROM servico";
-        $command = $con->prepare($sql);
-        $command->execute();
-        $data = $command->fetchAll();
-        arrayJSON($data);
-    }
-
-    //delete
     else if($tipo == "deletar-horario"){
         
         $sql = "DELETE FROM horario WHERE id_horario = :id_horario";
@@ -157,7 +110,6 @@
             echo "Deletado com sucesso!";
         }  
     }
-
     else if($tipo == "consultar-horario"){
         $sql = "SELECT * FROM horario WHERE id_horario = :id_horario";
         $command = $con->prepare($sql);
@@ -179,16 +131,26 @@
     }
 
 
-    else if($tipo == "deletar-barbeiro"){
-        
-        $sql = "DELETE FROM barbeiro WHERE id_barbeiro = :id_barbeiro";
+    
+// Serviços
+    else if($tipo == "cad-servico"){
+            
+        $sql = "INSERT INTO servico VALUES(0, :tipo_servico)";
         $command = $con->prepare($sql);
-        $command->bindParam(":id_barbeiro", $id_barbeiro);
+        $command->bindParam(":tipo_servico", $tipo_servico);
         if($command->execute()){
-            echo "Deletado com sucesso!";
-        }  
+            echo"Cadastrado com sucesso"; 
+        }else {
+            echo "Erro de conexão";
+        }    
     }
-
+    else if($tipo == "listar-servico") {
+        $sql = "SELECT * FROM servico";
+        $command = $con->prepare($sql);
+        $command->execute();
+        $data = $command->fetchAll();
+        arrayJSON($data);
+    }
     else if($tipo == "deletar-servico"){
         
         $sql = "DELETE FROM servico WHERE id_servico = :id_servico";
@@ -198,8 +160,6 @@
             echo "Deletado com sucesso!";
         }  
     }
-
-    
     else if($tipo == "consultar-servico"){
         $sql = "SELECT * FROM servico WHERE id_servico = :id_servico";
         $command = $con->prepare($sql);
@@ -208,7 +168,6 @@
         if($data = $command->fetch())
             arrayJSON($data);
     }
-    
     else if ($tipo == "alterar-servico"){
         $sql = "UPDATE servico SET tipo_servico = :tipo_servico WHERE id_servico= :id_servico";  
                        
@@ -220,7 +179,27 @@
             echo"Alterado com sucesso!";
     }
     
-    
+// Barbeiro   
+    else if($tipo == "cad-barbeiro"){
+            
+        $sql = "INSERT INTO barbeiro VALUES(0, :nome_barbeiro)";
+        $command = $con->prepare($sql);
+        $command->bindParam(":nome_barbeiro", $nome_barbeiro);
+            
+        if($command->execute()){
+            echo"Cadastrado com sucesso";    
+        } else {
+            echo "Erro de conexão";
+        }
+        
+    }
+    else if($tipo == "listar-barbeiro") {
+        $sql = "SELECT * FROM barbeiro";
+        $command = $con->prepare($sql);
+        $command->execute();
+        $data = $command->fetchAll();
+        arrayJSON($data);
+    }
     else if($tipo == "consultar-barbeiro"){
         $sql = "SELECT * FROM barbeiro WHERE id_barbeiro = :id_barbeiro";
         $command = $con->prepare($sql);
@@ -229,7 +208,6 @@
         if($data = $command->fetch())
             arrayJSON($data);
     }
-
     else if ($tipo == "alterar-barbeiro"){
         $sql = "UPDATE barbeiro SET nome_barbeiro = :nome_barbeiro WHERE id_barbeiro= :id_barbeiro";  
                        
@@ -240,8 +218,17 @@
         if($command->execute())
             echo"Alterado com sucesso!";
     }
+    else if($tipo == "deletar-barbeiro"){
+        
+        $sql = "DELETE FROM barbeiro WHERE id_barbeiro = :id_barbeiro";
+        $command = $con->prepare($sql);
+        $command->bindParam(":id_barbeiro", $id_barbeiro);
+        if($command->execute()){
+            echo "Deletado com sucesso!";
+        }  
+    }
 
-    // agenda
+// agendamento
     else if ($tipo == "agenda"){
         $sql = "INSERT INTO agendamento VALUES(0, :nome, :email, :telefone, :id_horario, :id_servico, :id_barbeiro )";
         $command = $con->prepare($sql);
@@ -286,7 +273,7 @@
     }
         
 
-
+// login administrativo
     else if ($tipo == "login-adm"){
         $sql = "SELECT * FROM adm WHERE user_admin=:user_admin AND password_admin=sha1(:password_admin)";
         $command = $con->prepare($sql);

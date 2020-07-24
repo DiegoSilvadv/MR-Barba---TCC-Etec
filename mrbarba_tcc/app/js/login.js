@@ -32,7 +32,7 @@ $(document).ready(function(){
                     .done(function(retorno) 
                     {        
                         // alert("E-mail de confirmação enviado, por favor cheque sua caixa de e-mail!");
-                        window.location = "http://localhost:4000/agenda/mrbarba_tcc/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home/";         
+                        window.location = "http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home/";         
                     });
         });
     });
@@ -46,7 +46,7 @@ $(document).ready(function(){
             {   
                 let json = $.parseJSON(retorno);
                 if(json.status == 1){
-                    window.location = "http://localhost:4000/agenda/mrbarba_tcc/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home/";
+                    window.location = "http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/home/";
                 } else {
                     alert("Login ou senha inválido");
                 }

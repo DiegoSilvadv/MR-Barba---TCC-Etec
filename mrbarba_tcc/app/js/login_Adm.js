@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    
 
     $("#btn-logar").click(function(){
         $("#login-form").submit(function(event) {
@@ -15,9 +14,9 @@ $(document).ready(function(){
                 // $("#senha").val("");
                 let json =$.parseJSON(retorno);
                 if(json.status !=0){
-                    window.location = "http://localhost:4000/agenda/mrbarba_tcc/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/dashboard/";
+                    window.location = "http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/dashboard/";
                 } else {
-                    window.location = "http://localhost:4000/agenda/mrbarba_tcc/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/login_adm/";
+                    window.location = "http://localhost/projects/TCC_MR_Barba/MR-Barba---TCC-Etec/mrbarba_tcc/app/src/pages/login_adm/";
                     alert("Login ou senha inválidos");
                     abort();
                 }
