@@ -47,7 +47,7 @@ create table agendamento (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(120) NOT NULL,
     email varchar(120) NOT NULL,
-    telefone VARCHAR(11) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
     id_horario INT,
     id_servico INT,
     id_barbeiro INT

@@ -22,8 +22,8 @@ function EnviarEmail($email){
     $mail->addAddress($email);
                 
     $mail->isHTML(true);
-    $mail->Subject = 'Email de confirmação';
-    $mail->Body = 'Seu agendamento foi confirmado, obrigado! ';
+    $mail->Subject = 'Email de confirmacao';
+    $mail->Body = 'Seu agendamento foi confirmado, a equipe mr barba agradece a preferencia muito obrigado! ';
     $mail->AltBody = 'Confirmação de agendamento';
     $mail->Send();
         
